@@ -1,0 +1,424 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Trauma0_AcessarPastaLog" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="io_Trauma0" Type="InOutArgument(ui:UiElement)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>960,1631</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Trauma0_AcessarPastaLog_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="68">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="96">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="650,1566" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="texto" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="588,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Acessando pasta do Log&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Trauma Zer0 Console by Trauma Zer0" sap:VirtualizedContainerService.HintSize="588,1093" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[io_Trauma0]" OpenMode="Never" ScopeGuid="e4daed73-5854-405e-b6f2-8d480b044ab6" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="554,956" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="492,841" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:10">
+              <ui:RetryScope.ActivityBody>
+                <ActivityAction>
+                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="450,666" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:String" Name="dataAtual" />
+                      <Variable x:TypeArguments="x:Boolean" Name="apareceBotao" />
+                      <Variable x:TypeArguments="x:Boolean" Name="taNaFrente" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="5" DelayBefore="5" DisplayName="Click 'Explorer'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e4daed73-5854-405e-b6f2-8d480b044ab6" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="71, 186, 44, 16" DesignTimeScaleFactor="1" FriendlyName="'Explorer'" FullSelectorArgument="&lt;wnd cls='TcxCustomInnerTreeView' /&gt;&lt;ctrl name='Explorer' role='outline item' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TcxCustomInnerTreeView' /&gt;&lt;ctrl name='Explorer' role='outline item' automationid='' check:text='Explorer' /&gt;" Guid="13b65771-7d0f-48ea-8f3b-b0bddcc1e5cf" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAUCAYAAADLP76nAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEKSURBVFhH7VPBDcMgDOxeLMMszMImTJEnk7iY2sQGopaqKEHNSTzAF98dJo9t22DltX4AWBx3gLMxJ0D0YK2HSNuZaAJYY8CoZcGPOjk1wC+ErxcggEvTsDwKNIiTCWjUgbP7xFygOvfJXK671Gmve1edFR5Nvcer8P4JKSPYJIK3QkA+seBeQiQcKXgOlRC9BYMbMsvnrwsSBvn7htdi6AllA6mhmoTioxGeDBmQ9WxIBiSQUXVxPV4HY/9AvuFJAXq6R+cCAwF4zGQSSbUABsR9OUfuwRNSOppX8FWAMkJeaLYSkG9dcTFgghRWnE6dUffCeo9XoQkwhA8EZuPPA1wAd4CzsXgAgCdeeNGYb8KThwAAAABJRU5ErkJggg==" InformativeScreenshot="374aec291b33431977bb9763bea99abe.png" ScopeSelectorArgument="&lt;wnd app='tz0console.exe' cls='TFclient' title='Trauma Zer0 Console by Trauma Zer0 [07900076-10.211.28.34\Not lo*' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                      <ui:CommentOut.Body>
+                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="820,2566" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:UiElementExists DisplayName="Element Exists 'drop down button  Open'" Exists="[apareceBotao]" sap:VirtualizedContainerService.HintSize="758,107" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                            <ui:UiElementExists.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4a810a8c-c2c1-4dd3-8c55-33b21f7331f1" InformativeScreenshot="a25b9447a383210f5be042ace8947fd2" Selector="&lt;wnd cls='TcxTabSheet' title='Explorer' /&gt;&lt;wnd cls='TcxTabSheet' title='File manager' /&gt;&lt;wnd cls='TdxBreadcrumbEdit' /&gt;&lt;ctrl name='Computer' role='split button' /&gt;&lt;ctrl name='Open' role='drop down button' /&gt;">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:UiElementExists.Target>
+                          </ui:UiElementExists>
+                          <If Condition="[not apareceBotao]" sap:VirtualizedContainerService.HintSize="758,52" sap2010:WorkflowViewState.IdRef="If_3">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <If.Then>
+                              <Sequence sap:VirtualizedContainerService.HintSize="680,2027" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button'" sap:VirtualizedContainerService.HintSize="618,107" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition Position="Center">
+                                      <ui:CursorPosition.OffsetX>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetX>
+                                      <ui:CursorPosition.OffsetY>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetY>
+                                    </ui:CursorPosition>
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a0dd14c9-c59a-4d06-b118-e7c725b296d3" InformativeScreenshot="9346649478cc6474634324228fee39d4" Selector="&lt;wnd aaname='Custom 4' cls='TdxRibbon' /&gt;&lt;wnd aaname='FileManager' cls='TdxRibbonGroupsDockControl' /&gt;&lt;ctrl name='FileManager' role='tool bar' /&gt;&lt;ctrl name='Hide local download path' role='push button' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:Click.Target>
+                                </ui:Click>
+                                <ui:UiElementExists DisplayName="Element Exists 'drop down button  Open'" Exists="[apareceBotao]" sap:VirtualizedContainerService.HintSize="618,107" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
+                                  <ui:UiElementExists.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4a810a8c-c2c1-4dd3-8c55-33b21f7331f1" InformativeScreenshot="a25b9447a383210f5be042ace8947fd2" Selector="&lt;wnd cls='TcxTabSheet' title='Explorer' /&gt;&lt;wnd cls='TcxTabSheet' title='File manager' /&gt;&lt;wnd cls='TdxBreadcrumbEdit' /&gt;&lt;ctrl name='Computer' role='split button' /&gt;&lt;ctrl name='Open' role='drop down button' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:UiElementExists.Target>
+                                </ui:UiElementExists>
+                                <ui:UiElementExists DisplayName="Element Exists 'TcxTreeList'" Exists="[taNaFrente]" sap:VirtualizedContainerService.HintSize="618,107" sap2010:WorkflowViewState.IdRef="UiElementExists_5">
+                                  <ui:UiElementExists.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="074c63b4-d763-45b6-9c25-3da57deac548" InformativeScreenshot="2421ae05f5f3ab9c6d485a9001dfc4c4" Selector="&lt;wnd cls='TcxTreeList' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:UiElementExists.Target>
+                                </ui:UiElementExists>
+                                <If Condition="[not apareceBotao and taNaFrente]" sap:VirtualizedContainerService.HintSize="618,1475" sap2010:WorkflowViewState.IdRef="If_4">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <If.Then>
+                                    <Sequence sap:VirtualizedContainerService.HintSize="540,1196" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'TcxTreeList'" sap:VirtualizedContainerService.HintSize="478,107" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_RIGHT">
+                                        <ui:Click.CursorPosition>
+                                          <ui:CursorPosition Position="Center">
+                                            <ui:CursorPosition.OffsetX>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:CursorPosition.OffsetX>
+                                            <ui:CursorPosition.OffsetY>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:CursorPosition.OffsetY>
+                                          </ui:CursorPosition>
+                                        </ui:Click.CursorPosition>
+                                        <ui:Click.Target>
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9daee509-ab05-4c38-ba66-fc2c74a449ff" InformativeScreenshot="1954c586f3511a8e0b03778d1fe49a2d" Selector="&lt;wnd cls='TcxTreeList' /&gt;">
+                                            <ui:Target.TimeoutMS>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:Target.TimeoutMS>
+                                            <ui:Target.WaitForReady>
+                                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                                            </ui:Target.WaitForReady>
+                                          </ui:Target>
+                                        </ui:Click.Target>
+                                      </ui:Click>
+                                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'menu item'" sap:VirtualizedContainerService.HintSize="478,107" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                        <ui:Click.CursorPosition>
+                                          <ui:CursorPosition Position="Center">
+                                            <ui:CursorPosition.OffsetX>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:CursorPosition.OffsetX>
+                                            <ui:CursorPosition.OffsetY>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:CursorPosition.OffsetY>
+                                          </ui:CursorPosition>
+                                        </ui:Click.CursorPosition>
+                                        <ui:Click.Target>
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0f24be8a-4475-42bc-a67d-742d8d4096c0" InformativeScreenshot="bc264b19d892b3296c2f31f6ec71d59a" Selector="&lt;wnd app='tz0console.exe' cls='TdxBarSubMenuControl' idx='*' /&gt;&lt;ctrl name='External viewer' role='menu item' /&gt;">
+                                            <ui:Target.TimeoutMS>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:Target.TimeoutMS>
+                                            <ui:Target.WaitForReady>
+                                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                                            </ui:Target.WaitForReady>
+                                          </ui:Target>
+                                        </ui:Click.Target>
+                                      </ui:Click>
+                                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button  Open'" sap:VirtualizedContainerService.HintSize="478,107" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                        <ui:Click.CursorPosition>
+                                          <ui:CursorPosition Position="Center">
+                                            <ui:CursorPosition.OffsetX>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:CursorPosition.OffsetX>
+                                            <ui:CursorPosition.OffsetY>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:CursorPosition.OffsetY>
+                                          </ui:CursorPosition>
+                                        </ui:Click.CursorPosition>
+                                        <ui:Click.Target>
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="05a4b77c-717d-41c3-bcec-d4406dfa727b" InformativeScreenshot="202ebb1e3bbce316dbf4f7de57e50dc9" Selector="&lt;wnd app='tz0console.exe' cls='TdxBarSubMenuControl' idx='*' /&gt;&lt;ctrl name='External viewer' role='popup menu' /&gt;&lt;ctrl name='Open' role='push button' /&gt;">
+                                            <ui:Target.TimeoutMS>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:Target.TimeoutMS>
+                                            <ui:Target.WaitForReady>
+                                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                                            </ui:Target.WaitForReady>
+                                          </ui:Target>
+                                        </ui:Click.Target>
+                                      </ui:Click>
+                                      <ui:UiElementExists DisplayName="Element Exists 'drop down button  Open'" Exists="[apareceBotao]" sap:VirtualizedContainerService.HintSize="478,107" sap2010:WorkflowViewState.IdRef="UiElementExists_6">
+                                        <ui:UiElementExists.Target>
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4a810a8c-c2c1-4dd3-8c55-33b21f7331f1" InformativeScreenshot="a25b9447a383210f5be042ace8947fd2" Selector="&lt;wnd cls='TcxTabSheet' title='Explorer' /&gt;&lt;wnd cls='TcxTabSheet' title='File manager' /&gt;&lt;wnd cls='TdxBreadcrumbEdit' /&gt;&lt;ctrl name='Computer' role='split button' /&gt;&lt;ctrl name='Open' role='drop down button' /&gt;">
+                                            <ui:Target.TimeoutMS>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:Target.TimeoutMS>
+                                            <ui:Target.WaitForReady>
+                                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                                            </ui:Target.WaitForReady>
+                                          </ui:Target>
+                                        </ui:UiElementExists.Target>
+                                      </ui:UiElementExists>
+                                      <If Condition="[not apareceBotao]" sap:VirtualizedContainerService.HintSize="478,497" sap2010:WorkflowViewState.IdRef="If_5">
+                                        <If.Then>
+                                          <Sequence sap:VirtualizedContainerService.HintSize="400,218" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button'" sap:VirtualizedContainerService.HintSize="338,107" sap2010:WorkflowViewState.IdRef="Click_9" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                              <ui:Click.CursorPosition>
+                                                <ui:CursorPosition Position="Center">
+                                                  <ui:CursorPosition.OffsetX>
+                                                    <InArgument x:TypeArguments="x:Int32" />
+                                                  </ui:CursorPosition.OffsetX>
+                                                  <ui:CursorPosition.OffsetY>
+                                                    <InArgument x:TypeArguments="x:Int32" />
+                                                  </ui:CursorPosition.OffsetY>
+                                                </ui:CursorPosition>
+                                              </ui:Click.CursorPosition>
+                                              <ui:Click.Target>
+                                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a0dd14c9-c59a-4d06-b118-e7c725b296d3" InformativeScreenshot="9346649478cc6474634324228fee39d4" Selector="&lt;wnd aaname='Custom 4' cls='TdxRibbon' /&gt;&lt;wnd aaname='FileManager' cls='TdxRibbonGroupsDockControl' /&gt;&lt;ctrl name='FileManager' role='tool bar' /&gt;&lt;ctrl name='Hide local download path' role='push button' /&gt;">
+                                                  <ui:Target.TimeoutMS>
+                                                    <InArgument x:TypeArguments="x:Int32" />
+                                                  </ui:Target.TimeoutMS>
+                                                  <ui:Target.WaitForReady>
+                                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                  </ui:Target.WaitForReady>
+                                                </ui:Target>
+                                              </ui:Click.Target>
+                                            </ui:Click>
+                                          </Sequence>
+                                        </If.Then>
+                                        <If.Else>
+                                          <Sequence sap:VirtualizedContainerService.HintSize="400,103" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                          </Sequence>
+                                        </If.Else>
+                                      </If>
+                                    </Sequence>
+                                  </If.Then>
+                                  <If.Else>
+                                    <Sequence sap:VirtualizedContainerService.HintSize="400,103" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </Sequence>
+                                  </If.Else>
+                                </If>
+                              </Sequence>
+                            </If.Then>
+                            <If.Else>
+                              <Sequence sap:VirtualizedContainerService.HintSize="400,103" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Sequence>
+                            </If.Else>
+                          </If>
+                        </Sequence>
+                      </ui:CommentOut.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:CommentOut>
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Trauma0\Trauma0_NavegarPasta.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Trauma0\Trauma0_NavegarPasta.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_Caminho">Computer\D:\sep</InArgument>
+                        <InArgument x:TypeArguments="ui:UiElement" x:Key="in_Trauma0">[io_Trauma0]</InArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Trauma0\Trauma0_NavegarPasta.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Trauma0\Trauma0_NavegarPasta.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_Caminho">Computer\D:\sep\log</InArgument>
+                        <InArgument x:TypeArguments="ui:UiElement" x:Key="in_Trauma0">[io_Trauma0]</InArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
+                  </Sequence>
+                </ActivityAction>
+              </ui:RetryScope.ActivityBody>
+              <ui:RetryScope.Condition>
+                <ActivityFunc x:TypeArguments="x:Boolean" />
+              </ui:RetryScope.Condition>
+            </ui:RetryScope>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="1024, 0, 896, 1040" FilePath="D:\Trauma Zer0\Tz0\ModulesApp\tz0console.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAsdSURBVFhHrVd5WI1pGz/+mHwYS5QwUpasTRGdzt5iLe2LkkgqS5K0USiEamxlSyRL2UYmyjKUJMK0oJFRMZYUBjVp76Tn993vWzPj+mbmmpnv+37X9Tv3877X+973/dz377nPOYK/Qnp6eudKICgoLOq3e+cOgxV+S2b4+i6d67vUN8jHxyfIY767p5O91QyvBe6Gq8NWq3c+LnBwcOhc/RfIzMzsXAkEhYWFJvsT9uUay4SVE4xMWgwnu2Cc1B7aEyygRRxlZA19uQNG64uUw7U1X9nZWue6uro6db4uEIlEnau/ibS0s7y9dOnSsMgN6/faOc6G2hBd2HhtYovC4rE7+SrLuvME5ZUN7ElVA3LvV+JwWh58IvZjtt82NmS0EdMZo4eJBgapQsNJIzlf2travM+/REpKCm/PpJ7xnGxqXKdn7IxlEQksr7gKpRV1rLK6Ha9q2vHyXRsq3irxgvjynRKV79vwuoaxx1WNLL/kJ2xLPMdGieygrq7WNFRbK5rzqa7+a3f+GElJSbzds3vnXgsre4isfdn2Q5dRVQuUv2pFWWUrWSXKq5T8mr+u6rBlv9zjrmld8R7s3PWHmOKykmkMHoY+vXtlcL67dOnCx/gdjhw5ytvYHdtiRSYzIbZayq4UvmJUYTyoUOJ74oOKNrJtKKZ18Ys23Kf1/U/svefETltM9x69ZrhVWgdTx0A2RMcA5P43RX+Kw4cP8/bQoUNzzGfaYqzCjW1JvoGv9ibD2mkuMm4+RnElUPCjEgVPlcgnFjxtRf4TJW4/bsUtYl4ZsbwFN3lL98jeetyCgmdt7OqDnzF+8gLWo3d/Lgm+Hb9DcvJRLZlEWKtv5tE+JyQRD94CMjMLKORyaA7RwoJlq1FISdwsU+JGOZECXC9VIueREtklSmQ9aEXm9624UqzE5WLOdlxfpfu3Hn/E1pSbMJjmzShUE5EXJo/Nmzfz1mfJ4phJZi6YaO6DpIvl7HxhM/JfARoaA8BhosEEWLt442T2E+SWtyOntB25ZQzXy4GshwwZhS04m9+K9KI2ZNwHvs6ro2slzhW0IONuC45eqYTUzh+6UkeuCql80F+QmJioZ2ltjwlT3JnEfiV2pT3DybwWnL6jRMhXqbCzteWTuHu3CIM1hyAgYg+OfVuK+csiMGaCCBPE01D0HrhNVdt44A7GCadjwJBR2HLiIZJvtOJYbguOZNdA4byaGU73Yv/qocol8eucEISEBOeqDR5FqvdnYsc1iDr1HAeyW5B4rRmHrjVCZu4GNfUByMy8gqamZpgYyzF2tA5mTJ+GpIMHYThRH+bO/lStL6A7VgdxcbGwsXNEaEIB9mQ1IT67GTsvVkPuvB4imxUYNMKAa0UuH3xH7C5V/XEjXhia+zAj6wBMsl3LQg6WY8fFJsR924yEq804lteG+LOl6N6zL6qrq/Hx40eev6Cmpgbp6edQWfmSvw4OCsRooSW2X2pDTEYTtpxvQkTKS4hnbYKRTSCT2wVyCbwiqgsWeLiPGT5St15qG8CEtishcoqC6eITiMpoQzS9vJOSSMppxtGrb/kEOLS3t/OWQ0NDA0pKSvg1YwzPnz1DP7X+iL8NRJxu5Bl5Vol50fkQOkRBaLeKSWz80W/gcCUlYCiYYiafoic2h8jKnxnZh0M8eweE85PhtLkEkWnN2E6V4FqxNeUu3Nzc+UAc8vLyMNPCHJqDByE4OLjzLmBlbY3FMVlYf6YZoScbEXqqCQt2VsDI4xjErrsgcoiA0MoPIyeaczqYIZhkoGc50dQFQuqNyDES4rnxkCz8BrKAfCxJ/BlbMhqRQHoI3XGBNJCJN2/ewMbGFmoDNBEcGYuZDh4oKMjng++L34uBIyYh+lwjwk83IfREIxbv/xmKgO8gWZwOybwDMHLaDCPrQIyiFlECngK9L8c56Bs7wYjKbzQrChL3g5AsuQhZyAOYRdZgaVI9Dlxvh3vANlhZWqC/hgaiE84jp6wNCWduYdhQLT64u/tcmLuGYGvGB2ykyoVT6V131cM4/CVkQfcgXXoFUo+jMHLZApFdKMaIbCiBLsGCMaNH2uvTF46RXRgTuWyFhB6S+l6FfFUpJm+shdveegQfb4T/tkwM1NalM96O8/c+4lj2O6hpaOLChQs4fvw4evVWRdj+uyQ6bvcNcE+ox/SoOsgjfoI85CGkfjmQeJ2EyDWWEljDxkjsuAoECwZp9LXUN55NCayh/sdC7Hkc0mXXIA8thxklMJt24Xe4HhGpTdid1Y79V5tw+QXQf5A2Ll26yO9+hf9yqA0civATb6nvDVhyqAFzKHGLmDoo1r2DIrQU0uU3IfVOhchtN0T2azFabM8lME/Qr08P0+Hjp0DsuI6JXeMg9TzJZ6tYVQaTDTWw314HzwP1CExpQPjXDdhysRUa2uMRGhrKB09NPY0BIwyRVAyEUXD/Iw3wPliPWXF1mMFVYN17GIeWQep/C9KFaRC77eGEyEYJbTtE2LtXD52efdQ/yOfEMBFVQOJ1ghK4BsXKh/zLM2kXs3fXwSuxHmFnAUPLFVi/LoIPzuHe3UKYOAUh7DSD/9EGLDrYgLn76mG3tY5a2NECRegjqkAeJfANVWAvpLM2QnWgTgslYCD4TEVFlRbPRY7rqAXbmWRBMgkmE/Lg+1CsfQnTyDrYkDPXvY0k0ASIJumjVankzzzHmppqqPbujoUJb+GVRMKL+wnTQotgHlUNk8ha8lEJOW1GtvwGJN6nQZtkijkx3O4rif2IPHLUh06EZM5OiOclMsmS85CvyIcs7AmM172lnXyg6+/g4GDfue8OcAlwQ6moqBBCsQIq6l9CoKIKkdQYn2tPhfH691Csfgp50H3IlmV3CHxOHAaNkv42ijuhrdKtJwydvmISjyMQe51ismU5pN5iyNdWQLSyHF/064qca1mwc3Dmskd0dDSePv2RH8ncKOaQlvYNbzlIZXLoup2iBB7TTKE5sCiD2nsMQqpA1x59OR8mfORPEK4jciGlnmISzxRIl2RA5n8b0qBiqPTRhkbfHtCSLsIEnzuYvP41xs9Ph6raQBjqjYCGajc4z3LsDN2BD7W19HtQg1pJM8A3i6+AeMEx6Jp6ccHjO0J+ii5dBtDnO6FTTLt8RR71KxVSn4uQBxZhnGM8xjrth9mmTlGROBUbamG5DzAKeAjbZKDH0KkID1+Dg4kHKMBnmDffG7Y2VvislybkXAWWXmYS0hjFqCMO40L+ESardO8DofN2Jgu6S/MgEzKqhDzwOyhomMhJzQrShWLN8w5xhVeSRl5BvqaCJl4VNI2DoSVfBklAAfQ9zmH0jLXQtY6iE5BLPreybr34n2ReHaH+HN59B39JL2xj8rAyJgt+QInkMG42yJbfprFa1KGNkBI6qj+Qwh/xKpfT6DamgaNYVULHOJfeyeLIuN0bucQy9WHCPyn9f4DaxxlvrhKGzluYlErHDZSpG6qYOKQMEjoNUr+b/LGS085ky69D7nedgpHKfbO5885kNMQU9B3A9V7stqv9Xz3VOadxnON/ginEdzoSNxg472AWG1/AJa6aOe5sgvX2RhqzNZi+6Q2mbXxNJBtVw6bH1GPa5g8wCa9iQvfDbIyxJxe4lujGOfzn6BBmuEq33uBKKJ2XgKn+F9i0gEw2M/webDc9Ybabn8Ii4gdMCbwGM78LTOF9FBo6MnSlCtK7MeREi/f1P4L7Y5dDfN71874ftMbPxFiThRgl9+A51sQb2gY26N5nUD0984LIDRk94v8d3NjWIZoSLYnc/2+O3Jpr2Rgi98zfhEDwb6xxxXp8ht2cAAAAAElFTkSuQmCC" InformativeScreenshot="8076136059f468eb330914fd2e52046b.png" Selector="&lt;wnd app='tz0console.exe' cls='TFclient' title='Trauma Zer0 Console by Trauma Zer0*' /&gt;" Title="Trauma Zer0 Console by Trauma Zer0*" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="588,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Pasta do log acessada&quot;]" />
+  </Sequence>
+</Activity>

@@ -1,0 +1,529 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="AvançarEtapa" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
+    <x:Property Name="in_SalesforceBrowser" Type="InArgument(ui:UiElement)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="BreakTriggerScopeInArgument" Type="InArgument(x:String)" />
+    <x:Property Name="in_Comandos" Type="InArgument(x:String)" />
+    <x:Property Name="in_Observacoes" Type="InArgument(x:String)" />
+    <x:Property Name="in_Diagnostico" Type="InArgument(x:String)" />
+    <x:Property Name="in_Direcionamento" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>1102,4070</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="1112,4005" sap2010:WorkflowViewState.IdRef="Sequence_53">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="elementoExiste" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1050,141" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Avançando etapa do caso &quot; + in_TransactionItem.Reference.ToString + &quot; para Planejamento&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="1050,3532" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InUiElement="[in_SalesforceBrowser]" ScopeGuid="0eae0051-55b0-4594-b659-bb9b5bfe92cb" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1016,3395" sap2010:WorkflowViewState.IdRef="Sequence_52">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="954,82" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="[in_Config(&quot;URL_CasoSales&quot;).ToString.Replace(&quot;[IDCASO]&quot;, in_TransactionItem.SpecificContent(&quot;IDcaso&quot;).ToString).ToString]" Version="V3" />
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Origem do caso'" sap:VirtualizedContainerService.HintSize="954,157" sap2010:WorkflowViewState.IdRef="NClick_15" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0eae0051-55b0-4594-b659-bb9b5bfe92cb" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://saqueepague.lightning.force.com/lightning/r/Case/500SG000005jpbWYAQ/view?ws=%2Flightning%2Fr%2FReport%2F00OSG00000478pl2AA%2Fview" CvElementArea="437, 596, 22, 21" CvType="Icon" DesignTimeRectangle="441, 599, 14, 14" DesignTimeScaleFactor="1" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;one-record-home-flexipage2&amp;gt;forcegenerated-adg-rollup_component___force-generated__flexipage_-record-page___-caso_-manutencao_-correcao___-case___-v-i-e-w&amp;gt;forcegenerated-flexipage_caso_manutencao_correcao_case__view_js&amp;gt;record_flexipage-desktop-record-page-decorator&amp;gt;div&amp;gt;records-record-layout-event-broker&amp;gt;slot&amp;gt;slot&amp;gt;flexipage-record-home-template-desktop2&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;slot&amp;gt;flexipage-component2&amp;gt;slot&amp;gt;flexipage-tabset2&amp;gt;div&amp;gt;lightning-tabset&amp;gt;div&amp;gt;slot&amp;gt;slot&amp;gt;flexipage-tab2&amp;gt;slot&amp;gt;flexipage-component2&amp;gt;slot&amp;gt;records-lwc-detail-panel&amp;gt;records-base-record-form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;records-lwc-record-layout&amp;gt;forcegenerated-detailpanel_case___0124t00000056nbqay___full___view___recordlayout2&amp;gt;records-record-layout-block&amp;gt;slot&amp;gt;records-record-layout-section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;slot&amp;gt;records-record-layout-row&amp;gt;slot&amp;gt;records-record-layout-item&amp;gt;div&amp;gt;div&amp;gt;dl&amp;gt;dd&amp;gt;div&amp;gt;button&amp;gt;span' idx='3' isleaf='1' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl type='' class='inline-edit-trigger-icon slds-button__icon slds-button__icon_hint' isleaf='1' tag='SPAN' aaname='' /&gt;" Guid="52f03a1d-f412-4680-ac80-48bfeeac791b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC3SURBVDhPxdIxDoMgFMbxHprV1RGuwRm8AiOMrKyMMr7ms/AqFg20Jv0nDBr55Yk+6Kb+B3nvyRiTr94NQSEEEkJsa1mWfPdVN4RJUkqktWZsP1kXhA3YqJRibJomijHmJzqggpRVsD2CLqEjgnWcpHQKnSE48FZNaBRBH5BzbhhBFYSH8f7zPA8hqIKklNuPVrBeBDG0ritPUbBeBDFkrWUI07Q+8VUMYSMw/GzfVJ3RL90EET0BFzq32KEUbX8AAAAASUVORK5CYII=" InformativeScreenshot="79ceb0a9b3da056fc0423a430fd5f74c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='00781970 | Caso | Salesforce' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="60, 602, 86, 15" CvTextArgument="Origem do caso" CvType="Text" DesignTimeRectangle="61, 600, 84, 16" ElementType="Text" FriendlyName="'Origem do caso'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Origem do caso' class='test-id__field-label' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Origem do caso' class='test-id__field-label' tag='SPAN' type='' check:innerText='Origem do caso' /&gt;" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="954,90" sap2010:WorkflowViewState.IdRef="Delay_1" />
+            <If Condition="[in_TransactionItem.SpecificContent(&quot;Subtipo&quot;).ToString = &quot;Manutenção de terminal&quot;]" sap:VirtualizedContainerService.HintSize="954,872" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="376,345" sap2010:WorkflowViewState.IdRef="Sequence_67">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll 'GuiasDetalhesChatterMai…'" sap:VirtualizedContainerService.HintSize="334,257" sap2010:WorkflowViewState.IdRef="NMouseScroll_5" InteractionMode="HardwareEvents" MovementUnits="10" ScopeIdentifier="0eae0051-55b0-4594-b659-bb9b5bfe92cb" Version="V3">
+                    <uix:NMouseScroll.SearchedElement>
+                      <uix:SearchedElement>
+                        <uix:SearchedElement.Target>
+                          <uix:TargetAnchorable BrowserURL="https://saqueepague.lightning.force.com/lightning/r/Case/500SG000005jpbWYAQ/view?ws=%2Flightning%2Fr%2FReport%2F00OSG00000478pl2AA%2Fview" DesignTimeRectangle="488, 482, 108, 52" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Direcionamento Monitora…'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Direcionamento Monitoramento para' class='slds-form-element__label' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Direcionamento Monitoramento para' class='slds-form-element__label' tag='LABEL' type='' check:innerText='Direcionamento Monitoramento para' /&gt;" Guid="28b914ba-3ac0-436a-9ac0-d2cfdf7c258a" InformativeScreenshot="60b3db704210cf9c57449a8368b9e3f5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='00781970 | Caso | Salesforce' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target CvTextArea="86, 366, 98, 13" CvTextArgument="Monitoramento" CvType="Text" DesignTimeRectangle="87, 358, 97, 30" ElementType="Text" FriendlyName="'Monitoramento'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Monitoramento' class='test-id__section-header-title' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Monitoramento' class='test-id__section-header-title' tag='SPAN' type='' check:innerText='Monitoramento' /&gt;" SearchSteps="FuzzySelector, CV" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:SearchedElement.Target>
+                        <uix:SearchedElement.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:SearchedElement.Timeout>
+                      </uix:SearchedElement>
+                    </uix:NMouseScroll.SearchedElement>
+                    <uix:NMouseScroll.Target>
+                      <uix:TargetAnchorable BrowserURL="https://saqueepague.lightning.force.com/lightning/r/Case/500SG000007ZfsIYAS/view" DesignTimeRectangle="20, 377, 888, 1339" DesignTimeScaleFactor="1" ElementType="CheckBox" FriendlyName="'GuiasDetalhesChatterMai…'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl class='slds-tabs_card' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl class='slds-tabs_card' tag='DIV' type='' aaname='' check:innerText='Guias&amp;#xD;&amp;#xA;Detalhes&amp;#xD;&amp;#xA;Chatter&amp;#xD;&amp;#xA;Informações iniciais&amp;#xD;&amp;#xA;Número lógico&amp;#xD;&amp;#xA;05400297-ZAFFARI SININBU-OKI' /&gt;" Guid="e5dfef10-745b-4698-9a8a-55fbe773c7a0" InformativeScreenshot="e47a58356f4800d492aabdd014e9d6de.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='00817965 | Caso | Salesforce' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NMouseScroll.Target>
+                  </uix:NMouseScroll>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="376,345" sap2010:WorkflowViewState.IdRef="Sequence_68">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll 'GuiasDetalhesChatterMai…'" sap:VirtualizedContainerService.HintSize="334,257" sap2010:WorkflowViewState.IdRef="NMouseScroll_3" InteractionMode="HardwareEvents" MovementUnits="10" ScopeIdentifier="0eae0051-55b0-4594-b659-bb9b5bfe92cb" Version="V3">
+                    <uix:NMouseScroll.SearchedElement>
+                      <uix:SearchedElement>
+                        <uix:SearchedElement.Target>
+                          <uix:TargetAnchorable BrowserURL="https://saqueepague.lightning.force.com/lightning/r/Case/500SG0000079YmZYAU/view?ws=%2Flightning%2Fr%2FReport%2F00OSG00000478pl2AA%2Fview" DesignTimeRectangle="488, 463, 108, 52" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Direcionamento Monitora…'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Direcionamento Monitoramento para' class='slds-form-element__label' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Direcionamento Monitoramento para' class='slds-form-element__label' tag='LABEL' type='' check:innerText='Direcionamento Monitoramento para' /&gt;" Guid="6ee40b65-a625-4e2b-b160-2a07d28bc813" InformativeScreenshot="17edca7acd53331936b5f6c1f7df9959.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='00810607 | Caso | Salesforce' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target CvTextArea="85, 347, 105, 13" CvTextArgument="Atendimento N2" CvType="Text" DesignTimeRectangle="87, 339, 103, 30" ElementType="Text" FriendlyName="'Atendimento N2'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Atendimento N2' class='test-id__section-header-title' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Atendimento N2' class='test-id__section-header-title' tag='SPAN' type='' check:innerText='Atendimento N2' /&gt;" SearchSteps="FuzzySelector, CV" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:SearchedElement.Target>
+                        <uix:SearchedElement.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:SearchedElement.Timeout>
+                      </uix:SearchedElement>
+                    </uix:NMouseScroll.SearchedElement>
+                    <uix:NMouseScroll.Target>
+                      <uix:TargetAnchorable BrowserURL="https://saqueepague.lightning.force.com/lightning/r/Case/500SG000007ZfsIYAS/view" DesignTimeRectangle="20, 377, 888, 1339" DesignTimeScaleFactor="1" ElementType="CheckBox" FriendlyName="'GuiasDetalhesChatterMai…'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl class='slds-tabs_card' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl class='slds-tabs_card' tag='DIV' type='' aaname='' check:innerText='Guias&amp;#xD;&amp;#xA;Detalhes&amp;#xD;&amp;#xA;Chatter&amp;#xD;&amp;#xA;Informações iniciais&amp;#xD;&amp;#xA;Número lógico&amp;#xD;&amp;#xA;05400297-ZAFFARI SININBU-OKI' /&gt;" Guid="5ed87109-3580-49ad-98d6-816cef51838d" InformativeScreenshot="a868d9a484364ceb719079ab7d7b1a9c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='00817965 | Caso | Salesforce' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NMouseScroll.Target>
+                  </uix:NMouseScroll>
+                </Sequence>
+              </If.Else>
+            </If>
+            <uix:NCheckState DisplayName="Check App State 'Direcionamento N1 para'" sap:VirtualizedContainerService.HintSize="954,529" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="0eae0051-55b0-4594-b659-bb9b5bfe92cb" Version="V3">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,272" sap2010:WorkflowViewState.IdRef="Sequence_63">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Atendimento CRC/N1'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_16" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0eae0051-55b0-4594-b659-bb9b5bfe92cb" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://saqueepague.lightning.force.com/lightning/r/Case/500SG000005jpbWYAQ/view?ws=%2Flightning%2Fr%2FReport%2F00OSG00000478pl2AA%2Fview" CvElementArea="58, 247, 24, 22" CvType="ArrowButton" DesignTimeRectangle="64, 255, 14, 8" DesignTimeScaleFactor="1" ElementType="Icon" FriendlyName="'PATH'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;one-record-home-flexipage2&amp;gt;forcegenerated-adg-rollup_component___force-generated__flexipage_-record-page___-caso_-manutencao_-correcao___-case___-v-i-e-w&amp;gt;forcegenerated-flexipage_caso_manutencao_correcao_case__view_js&amp;gt;record_flexipage-desktop-record-page-decorator&amp;gt;div&amp;gt;records-record-layout-event-broker&amp;gt;slot&amp;gt;slot&amp;gt;flexipage-record-home-template-desktop2&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;slot&amp;gt;flexipage-component2&amp;gt;slot&amp;gt;flexipage-tabset2&amp;gt;div&amp;gt;lightning-tabset&amp;gt;div&amp;gt;slot&amp;gt;slot&amp;gt;flexipage-tab2&amp;gt;slot&amp;gt;flexipage-component2&amp;gt;slot&amp;gt;records-lwc-detail-panel&amp;gt;records-base-record-form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;records-lwc-record-layout&amp;gt;forcegenerated-detailpanel_case___0124t00000056nbqay___full___view___recordlayout2&amp;gt;records-record-layout-block&amp;gt;slot&amp;gt;records-record-layout-section&amp;gt;div&amp;gt;h3&amp;gt;button&amp;gt;span&amp;gt;lightning-icon&amp;gt;span&amp;gt;lightning-primitive-icon&amp;gt;svg&amp;gt;g&amp;gt;path' idx='4' tag='path' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl type='' class='' tag='path' aaname='' /&gt;" Guid="ef460436-f1d8-4ac8-af13-a997d2d32b16" InformativeScreenshot="3014f5df6010ab10f2032c279eb82f02.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='00781970 | Caso | Salesforce' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CvTextArea="85, 252, 135, 15" CvTextArgument="Atendimento CRC/N1" CvType="Text" DesignTimeRectangle="87, 244, 134, 30" ElementType="Text" FriendlyName="'Atendimento CRC/N1'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Atendimento CRC/N1' class='test-id__section-header-title' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Atendimento CRC/N1' class='test-id__section-header-title' tag='SPAN' type='' check:innerText='Atendimento CRC/N1' /&gt;" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_64">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="https://saqueepague.lightning.force.com/lightning/r/Case/500SG000005jpbWYAQ/view" DesignTimeRectangle="488, 396, 108, 36" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Direcionamento N1 para'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Direcionamento N1 para' class='slds-form-element__label' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Direcionamento N1 para' class='slds-form-element__label' tag='LABEL' type='' check:innerText='Direcionamento N1 para' /&gt;" Guid="c6e50e23-45c3-4302-ae2c-cec4c0897af8" InformativeScreenshot="6d28a0a2917fe88fc14938a449a8ec4d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='00781970 | Caso | Salesforce' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="85, 280, 135, 15" CvTextArgument="Atendimento CRC/N1" CvType="Text" DesignTimeRectangle="87, 272, 134, 30" ElementType="Text" FriendlyName="'Atendimento CRC/N1'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Atendimento CRC/N1' class='test-id__section-header-title' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Atendimento CRC/N1' class='test-id__section-header-title' tag='SPAN' type='' check:innerText='Atendimento CRC/N1' /&gt;" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NCheckState>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Comandos'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="954,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="DebuggerApi" ScopeIdentifier="0eae0051-55b0-4594-b659-bb9b5bfe92cb" Text="[in_Comandos]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://saqueepague.lightning.force.com/lightning/r/Case/500SG000005jpbWYAQ/view?ws=%2Flightning%2Fr%2FReport%2F00OSG00000478pl2AA%2Fview" CvElementArea="67, 373, 391, 56" CvType="InputBox" DesignTimeRectangle="67, 373, 390, 55" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'TEXTAREA input-955'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Comandos' idx='2' tag='TEXTAREA' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Comandos' type='' tag='TEXTAREA' class='slds-textarea' /&gt;" Guid="f9cafbf3-76a2-4fde-937b-08b8590aeda0" InformativeScreenshot="03767131c3a09246b012357962a8e8e2.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='00781970 | Caso | Salesforce' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="68, 359, 59, 12" CvTextArgument="Comandos" CvType="Text" DesignTimeRectangle="69, 353, 65, 20" ElementType="Text" FriendlyName="'Comandos'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Comandos' class='slds-form-element__label' idx='2' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Comandos' class='slds-form-element__label' type='' tag='LABEL' check:innerText='Comandos' /&gt;" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Observações adicionais'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="954,218" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="DebuggerApi" ScopeIdentifier="0eae0051-55b0-4594-b659-bb9b5bfe92cb" Text="[in_Observacoes]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://saqueepague.lightning.force.com/lightning/r/Case/500SG000005jpbWYAQ/view?ws=%2Flightning%2Fr%2FReport%2F00OSG00000478pl2AA%2Fview" CvElementArea="485, 373, 391, 55" CvType="InputBox" DesignTimeRectangle="485, 373, 391, 55" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'TEXTAREA input-957'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Observações adicionais' idx='2' tag='TEXTAREA' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Observações adicionais' type='' tag='TEXTAREA' class='slds-textarea' /&gt;" Guid="24634752-115f-41b1-bdce-c9d13296c150" InformativeScreenshot="64756dddc693343d47a59ba8eaa00de4.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='00781970 | Caso | Salesforce' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="487, 359, 125, 15" CvTextArgument="Observacoes adicionais" CvType="Text" DesignTimeRectangle="488, 353, 131, 20" ElementType="Text" FriendlyName="'Observações adicionais'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Observações adicionais' class='slds-form-element__label' idx='2' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Observações adicionais' class='slds-form-element__label' type='' tag='LABEL' check:innerText='Observações adicionais' /&gt;" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Diagnóstico de'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="954,218" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="DebuggerApi" ScopeIdentifier="0eae0051-55b0-4594-b659-bb9b5bfe92cb" Text="[in_Diagnostico]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://saqueepague.lightning.force.com/lightning/r/Case/500SG000005jpbWYAQ/view?ws=%2Flightning%2Fr%2FReport%2F00OSG00000478pl2AA%2Fview" CvElementArea="66, 455, 390, 55" CvType="InputBox" DesignTimeRectangle="69, 457, 387, 52" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'TEXTAREA input-959'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Diagnóstico de manutenção' tag='TEXTAREA' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Diagnóstico de manutenção' tag='TEXTAREA' type='' class='slds-textarea' /&gt;" Guid="9e03efa3-4792-4f5d-8273-ce5f8021a0b7" InformativeScreenshot="309eaa08b72da6d4ae0b99569989cdfb.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='00781970 | Caso | Salesforce' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="68, 441, 150, 15" CvTextArgument="Diagnostico de manutencao" CvType="Text" DesignTimeRectangle="69, 435, 157, 20" ElementType="Text" FriendlyName="'Diagnóstico de'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Diagnóstico de manutenção' class='slds-form-element__label' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Diagnóstico de manutenção' class='slds-form-element__label' tag='LABEL' type='' check:innerText='Diagnóstico de manutenção' /&gt;" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NSelectItem DisplayName="Select Item 'Status'" sap:VirtualizedContainerService.HintSize="954,157" sap2010:WorkflowViewState.IdRef="NSelectItem_5" Item="[in_Direcionamento]" ScopeIdentifier="0eae0051-55b0-4594-b659-bb9b5bfe92cb" Version="V3">
+              <uix:NSelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="4">
+                  <x:String>--Nenhum--</x:String>
+                  <x:String>Planejamento</x:String>
+                  <x:String>Resolução remota monitoramento</x:String>
+                  <x:String>Suporte</x:String>
+                </scg:List>
+              </uix:NSelectItem.Items>
+              <uix:NSelectItem.Target>
+                <uix:TargetAnchorable BrowserURL="https://saqueepague.lightning.force.com/lightning/r/Case/500SG000005jpbWYAQ/view?ws=%2Flightning%2Fr%2FReport%2F00OSG00000478pl2AA%2Fview" CvTextArea="627, 446, 73, 13" CvTextArgument="--Nenhum--" CvType="Text" DesignTimeRectangle="616, 437, 259, 32" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'--Nenhum--'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aria-label='Direcionamento Monitoramento para - Seleção atual: *' aria-role='combobox' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aria-label='Direcionamento Monitoramento para - Seleção atual: --Nenhum--' aria-role='combobox' tag='BUTTON' type='button' class='slds-combobox__input slds-input_faux fix-slds-input_faux slds-combobox__input-value' aaname='*' check:innerText='' /&gt;" Guid="ee947983-ff1b-483f-a13a-8177c3871dde" ImageBase64="" InformativeScreenshot="da34299226eeeb10747241483d94d01b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='00781970 | Caso | Salesforce' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="488, 437, 108, 52" ElementType="Text" FriendlyName="'Direcionamento Monitora…'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Direcionamento Monitoramento para' class='slds-form-element__label' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Direcionamento Monitoramento para' class='slds-form-element__label' tag='LABEL' type='' check:innerText='Direcionamento Monitoramento para' /&gt;" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NSelectItem.Target>
+            </uix:NSelectItem>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Salvar'" sap:VirtualizedContainerService.HintSize="954,157" sap2010:WorkflowViewState.IdRef="NClick_12" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0eae0051-55b0-4594-b659-bb9b5bfe92cb" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://saqueepague.lightning.force.com/lightning/r/Case/500SG000005jpbWYAQ/view" CvElementArea="471, 617, 71, 35" CvTextArea="489, 628, 37, 13" CvTextArgument="Salvar" CvType="Button" DesignTimeRectangle="473, 619, 68, 32" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Salvar'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Salvar' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Salvar' tag='BUTTON' type='button' class='slds-button slds-button_brand' check:innerText='Salvar' /&gt;" Guid="3d6f6796-6b69-46f3-b8ec-50a7002cbbf7" InformativeScreenshot="633f69a437d6ebddf9e6862a5d4e80ab.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='00781970 | Caso | Salesforce' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvElementArea="384, 618, 86, 35" CvTextArea="402, 628, 52, 13" CvTextArgument="Cancelar" CvType="Button" DesignTimeRectangle="386, 619, 83, 32" ElementType="Button" FriendlyName="'Cancelar'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Cancelar' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Cancelar' tag='BUTTON' type='button' class='slds-button slds-button_neutral' check:innerText='Cancelar' /&gt;" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="954,90" sap2010:WorkflowViewState.IdRef="Delay_2" />
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="954,52" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <TryCatch.Try>
+                <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[elementoExiste]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="1076,805" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2">
+                  <ui:InterruptibleDoWhile.Body>
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1042,669" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NCheckState DisplayName="Check App State 'Case'" Exists="[elementoExiste]" sap:VirtualizedContainerService.HintSize="1000,581" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="0eae0051-55b0-4594-b659-bb9b5bfe92cb" Version="V3">
+                        <uix:NCheckState.IfExists>
+                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,364" sap2010:WorkflowViewState.IdRef="Sequence_57">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Case'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_13" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0eae0051-55b0-4594-b659-bb9b5bfe92cb" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://saqueepague.lightning.force.com/lightning/r/Case/500SG0000063ZnWYAU/view" DesignTimeRectangle="1291, 151, 9, 9" DesignTimeScaleFactor="1" ElementType="Icon" FriendlyName="'PATH'" FullSelectorArgument="&lt;webctrl idx='4' sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexConsoleTabset:parentTabset/navexConsoleTabContainer:tabBar/navexConsoleTabItem/lightningButtonIcon:closeButton/lightningPrimitiveIcon' tag='LIGHTNING-PRIMITIVE-ICON' /&gt;&lt;webctrl tag='path' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexConsoleTabset:parentTabset/navexConsoleTabContainer:tabBar/navexConsoleTabItem/lightningButtonIcon:closeButton/lightningPrimitiveIcon' tag='LIGHTNING-PRIMITIVE-ICON' /&gt;&lt;webctrl tag='path' type='' class='' aaname='' /&gt;" Guid="46f73b29-9e1b-4a80-855f-70fe5665aa5c" InformativeScreenshot="782877b90ce7ecaa818e3f03d015d310.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='00788418 | Caso | Salesforce' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="1102, 142, 24, 24" FriendlyName="'Case'" FullSelectorArgument="&lt;webctrl idx='4' sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexConsoleTabset:parentTabset/navexConsoleTabContainer:tabBar/navexConsoleTabItem/auraIf/auraHtml' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexConsoleTabset:parentTabset/navexConsoleTabContainer:tabBar/navexConsoleTabItem/auraIf/auraHtml' tag='SPAN' class='slds-show_inline-block' aaname='' check:innerText='Case' /&gt;" SearchSteps="FuzzySelector" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                            <uix:NCheckState DisplayName="Check App State 'Salvar alterações'" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="0eae0051-55b0-4594-b659-bb9b5bfe92cb" Version="V3">
+                              <uix:NCheckState.IfExists>
+                                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,270" sap2010:WorkflowViewState.IdRef="Sequence_65">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Salvar'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_17" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0eae0051-55b0-4594-b659-bb9b5bfe92cb" Version="V3">
+                                    <uix:NClick.Target>
+                                      <uix:TargetAnchorable BrowserURL="https://saqueepague.lightning.force.com/lightning/r/Case/500SG0000075UUXYA2/view" CvElementArea="810, 451, 73, 36" CvTextArea="828, 462, 37, 13" CvTextArgument="Salvar" CvType="Button" DesignTimeRectangle="812, 453, 68, 32" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Salvar'" FullSelectorArgument="&lt;webctrl aaname='Salvar' sfl-path='uiPanelManager2/uiModal:modal/forceNavigateConfirmation/lightningButton/auraHtml:privateButton' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Salvar' sfl-path='uiPanelManager2/uiModal:modal/forceNavigateConfirmation/lightningButton/auraHtml:privateButton' tag='BUTTON' type='button' class='slds-button slds-button_brand saveBtn' check:innerText='Salvar' /&gt;" Guid="3510db7f-cfac-45f4-a6e7-314235b879cd" InformativeScreenshot="870f58009de51b781dca135301b48bd6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='00809552 | Caso | Salesforce' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                        <uix:TargetAnchorable.Anchors>
+                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                            <uix:Target CvElementArea="653, 452, 152, 35" CvTextArea="671, 462, 117, 16" CvTextArgument="Descartar alteracoes" CvType="Button" DesignTimeRectangle="655, 453, 150, 32" ElementType="Button" FriendlyName="'Descartar alterações'" FullSelectorArgument="&lt;webctrl aaname='Descartar alterações' sfl-path='uiPanelManager2/uiModal:modal/forceNavigateConfirmation/lightningButton/auraHtml:privateButton' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Descartar alterações' sfl-path='uiPanelManager2/uiModal:modal/forceNavigateConfirmation/lightningButton/auraHtml:privateButton' tag='BUTTON' type='button' class='slds-button slds-button_neutral discardBtn' check:innerText='Descartar alterações' /&gt;" SearchSteps="FuzzySelector, CV" />
+                                          </scg:List>
+                                        </uix:TargetAnchorable.Anchors>
+                                      </uix:TargetAnchorable>
+                                    </uix:NClick.Target>
+                                  </uix:NClick>
+                                </Sequence>
+                              </uix:NCheckState.IfExists>
+                              <uix:NCheckState.IfNotExists>
+                                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_66">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </Sequence>
+                              </uix:NCheckState.IfNotExists>
+                              <uix:NCheckState.Target>
+                                <uix:TargetAnchorable BrowserURL="https://saqueepague.lightning.force.com/lightning/r/Case/500SG0000075UUXYA2/view" CvTextArea="572, 322, 238, 18" CvTextArgument="Salvar alteracoes em Caso?" CvType="Text" DesignTimeRectangle="387, 318, 608, 25" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Salvar alterações'" FullSelectorArgument="&lt;webctrl sfl-path='uiPanelManager2/uiModal:modal/auraIf/auraHtml' tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='uiPanelManager2/uiModal:modal/auraIf/auraHtml' tag='H2' type='' class='title slds-text-heading--medium slds-hyphenate' aaname='Salvar alterações em Caso?' check:innerText='Salvar alterações em Caso?' /&gt;" Guid="95806a0a-dd59-4340-9aa1-aac7a4568565" InformativeScreenshot="0261711a41ee9e3271692ae0f14d6ec3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='00809552 | Caso | Salesforce' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                              </uix:NCheckState.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NCheckState>
+                          </Sequence>
+                        </uix:NCheckState.IfExists>
+                        <uix:NCheckState.IfNotExists>
+                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="496,197" sap2010:WorkflowViewState.IdRef="Sequence_58">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Boolean">[elementoExiste]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </uix:NCheckState.IfNotExists>
+                        <uix:NCheckState.Target>
+                          <uix:TargetAnchorable BrowserURL="https://saqueepague.lightning.force.com/lightning/r/Case/500SG0000063ZnWYAU/view" DesignTimeRectangle="1291, 151, 9, 9" DesignTimeScaleFactor="1" ElementType="Icon" FriendlyName="'PATH'" FullSelectorArgument="&lt;webctrl idx='4' sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexConsoleTabset:parentTabset/navexConsoleTabContainer:tabBar/navexConsoleTabItem/lightningButtonIcon:closeButton/lightningPrimitiveIcon' tag='LIGHTNING-PRIMITIVE-ICON' /&gt;&lt;webctrl tag='path' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexConsoleTabset:parentTabset/navexConsoleTabContainer:tabBar/navexConsoleTabItem/lightningButtonIcon:closeButton/lightningPrimitiveIcon' tag='LIGHTNING-PRIMITIVE-ICON' /&gt;&lt;webctrl tag='path' type='' class='' aaname='' /&gt;" Guid="781412de-3b23-4bf8-8f5b-11bdd14a4e1e" InformativeScreenshot="ff9103798edf6c5ad40ef1dc172abc28.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='00788418 | Caso | Salesforce' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target DesignTimeRectangle="1102, 142, 24, 24" FriendlyName="'Case'" FullSelectorArgument="&lt;webctrl idx='4' sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexConsoleTabset:parentTabset/navexConsoleTabContainer:tabBar/navexConsoleTabItem/auraIf/auraHtml' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexConsoleTabset:parentTabset/navexConsoleTabContainer:tabBar/navexConsoleTabItem/auraIf/auraHtml' tag='SPAN' class='slds-show_inline-block' aaname='' check:innerText='Case' /&gt;" SearchSteps="FuzzySelector" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NCheckState.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NCheckState>
+                    </Sequence>
+                  </ui:InterruptibleDoWhile.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:InterruptibleDoWhile>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1080,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <Sequence sap:VirtualizedContainerService.HintSize="450,386" sap2010:WorkflowViewState.IdRef="Sequence_61">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="388,179" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][d(shift)]w[u(shift)][u(hk)]" Version="V3" />
+                      <uix:NCheckState DisplayName="Check App State 'Fechar todas as guias?'" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="0eae0051-55b0-4594-b659-bb9b5bfe92cb" Version="V3">
+                        <uix:NCheckState.IfExists>
+                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,272" sap2010:WorkflowViewState.IdRef="Sequence_59">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Fechar tudo'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_14" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0eae0051-55b0-4594-b659-bb9b5bfe92cb" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://saqueepague.lightning.force.com/lightning/r/Case/500SG000006udq1YAA/related/AttachedContentNotes/view?ws=%2Flightning%2Fr%2FCase%2F500SG000006udq1YAA%2Fview" CvElementArea="891, 479, 106, 38" CvTextArea="909, 491, 70, 13" CvTextArgument="Fechar tudo" CvType="Button" DesignTimeRectangle="893, 482, 102, 32" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Fechar tudo'" FullSelectorArgument="&lt;webctrl sfl-path='uiPanelManager2/uiModal:modal/oneCloseTabsConfirmationModal/lightningButton:confirmButton/auraHtml:privateButton' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='uiPanelManager2/uiModal:modal/oneCloseTabsConfirmationModal/lightningButton:confirmButton/auraHtml:privateButton' tag='BUTTON' type='button' class='slds-button slds-button_neutral slds-button slds-button_brand' aaname='Fechar tudo' check:innerText='Fechar tudo' /&gt;" Guid="bd04d344-49f1-4412-9eb9-9870b0f9c682" InformativeScreenshot="3b7389d059e1f3a789bac8306e053dc9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Notas | Salesforce' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target CvElementArea="800, 481, 86, 35" CvTextArea="818, 491, 51, 13" CvTextArgument="Cancelar" CvType="Button" DesignTimeRectangle="802, 482, 83, 32" ElementType="Button" FriendlyName="'Cancelar'" FullSelectorArgument="&lt;webctrl sfl-path='uiPanelManager2/uiModal:modal/oneCloseTabsConfirmationModal/lightningButton:cancelButton/auraHtml:privateButton' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='uiPanelManager2/uiModal:modal/oneCloseTabsConfirmationModal/lightningButton:cancelButton/auraHtml:privateButton' tag='BUTTON' type='button' class='slds-button slds-button_neutral slds-button slds-button_neutral' aaname='Cancelar' check:innerText='Cancelar' /&gt;" SearchSteps="FuzzySelector, CV" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                          </Sequence>
+                        </uix:NCheckState.IfExists>
+                        <uix:NCheckState.IfNotExists>
+                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_60">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Sequence>
+                        </uix:NCheckState.IfNotExists>
+                        <uix:NCheckState.Target>
+                          <uix:TargetAnchorable BrowserURL="https://saqueepague.lightning.force.com/lightning/r/Case/500SG000006udq1YAA/related/AttachedContentNotes/view?ws=%2Flightning%2Fr%2FCase%2F500SG000006udq1YAA%2Fview" CvTextArea="592, 294, 198, 23" CvTextArgument="Fechar todas as guias?" CvType="Text" DesignTimeRectangle="387, 290, 608, 25" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Fechar todas as guias?'" FullSelectorArgument="&lt;webctrl sfl-path='uiPanelManager2/uiModal:modal/oneCloseTabsConfirmationModal/auraHtml' tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='uiPanelManager2/uiModal:modal/oneCloseTabsConfirmationModal/auraHtml' tag='H2' type='' class='slds-text-heading_medium slds-hyphenate' aaname='Fechar todas as guias?' check:innerText='Fechar todas as guias?' /&gt;" Guid="c3ea4e81-1b0f-4011-81fb-abc4f148c2b4" InformativeScreenshot="a873b6608376ca1199e4d7e505145d5d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Notas | Salesforce' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target CvElementArea="891, 479, 106, 38" CvTextArea="909, 491, 70, 13" CvTextArgument="Fechar tudo" CvType="Button" DesignTimeRectangle="893, 482, 102, 32" ElementType="Button" FriendlyName="'Fechar tudo'" FullSelectorArgument="&lt;webctrl sfl-path='uiPanelManager2/uiModal:modal/oneCloseTabsConfirmationModal/lightningButton:confirmButton/auraHtml:privateButton' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='uiPanelManager2/uiModal:modal/oneCloseTabsConfirmationModal/lightningButton:confirmButton/auraHtml:privateButton' tag='BUTTON' type='button' class='slds-button slds-button_neutral slds-button slds-button_brand' aaname='Fechar tudo' check:innerText='Fechar tudo' /&gt;" SearchSteps="FuzzySelector, CV" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NCheckState.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NCheckState>
+                    </Sequence>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1050,141" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Etapa avançada com sucesso&quot;]" />
+  </Sequence>
+</Activity>

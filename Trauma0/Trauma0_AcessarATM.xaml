@@ -1,0 +1,786 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Trauma0_AcessarATM" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Trauma0" Type="InOutArgument(ui:UiElement)" />
+    <x:Property Name="in_IpTerminal" Type="InArgument(x:String)" />
+    <x:Property Name="io_ErrosDeConexao" Type="InOutArgument(x:Int32)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>960,2909</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Trauma0_AcessarATM_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="34">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="94">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.Process</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Trauma0_AcessarATM" sap:VirtualizedContainerService.HintSize="568,2844" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="506,141" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Acessando ATM&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Trauma Zer0 Console by Trauma Zer0" sap:VirtualizedContainerService.HintSize="506,2371" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Trauma0]" OpenMode="Never" ScopeGuid="36c430e6-5cd0-4a67-bf7d-ee8f4ac908da" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence sap:VirtualizedContainerService.HintSize="472,2234" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Boolean" Name="botaoDesconectarExiste" />
+              <Variable x:TypeArguments="x:Boolean" Name="connect" />
+              <Variable x:TypeArguments="x:Boolean" Name="connectComIDX" />
+              <Variable x:TypeArguments="x:String" Name="statusBar" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="410,25" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'IP'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="410,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="36c430e6-5cd0-4a67-bf7d-ee8f4ac908da" Text="[in_IpTerminal]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="151, 156, 126, 13" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'10.211.28.34'" FullSelectorArgument="&lt;wnd cls='TcxCustomComboBoxInnerEdit' idx='2' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TcxCustomComboBoxInnerEdit' /&gt;" Guid="2c74658c-bf68-479d-9c1a-12b7e7d500a6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIIAAAARCAYAAAAR8XQQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAErSURBVGhD7ZTdbYRADISvnJSYDlIMBaUDQCB+OiDalSZnRuOFSOTJHmnk9Td+Okb36rruSKdrEVJxVb7/vu/vIrw+v8P6+Pqov0FEle+/bVsWoTiL4BSBdzCIM9hKZcxaHLa6w62tvLzO4EVY1/VcBCv1g3m7YtitOIcst+YMOybzFlN7UX1nEe79I1ztynzD+xVXxi0m85b5Bqrv4EVYliVmEfD+nVmE/ymCyhVrcTbfWVnOhpidZvAizPP8fBG87K/cmm+udmXcYJ5YFuHZIni82Ms8DqucGe/KuJEKXoRpmp4rgmLWXu7xYi9jzrtivFuWRbhZBDDIMpVDyPi2xe2upDLL8PZuOK8zeBHGcdRFiOYsQhahOnoRhmF4FyEVU1mEVFX5/n3fHz97XUN/5NSEAgAAAABJRU5ErkJggg==" InformativeScreenshot="918aeb2411eb9a8773045ef97db4a7b4.png" ScopeSelectorArgument="&lt;wnd app='tz0console.exe' cls='TFclient' title='Trauma Zer0 Console by Trauma Zer0' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="410,90" sap2010:WorkflowViewState.IdRef="Delay_1" />
+            <ui:UiElementExists DisplayName="Element Exists 'TcxButton'" Exists="[connectComIDX]" sap:VirtualizedContainerService.HintSize="410,107" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f0840c2d-26fa-4480-b9e5-813ced5b9c00" InformativeScreenshot="e3a4a901b052dd94541344fc91693afa" Selector="&lt;wnd cls='TcxButton' idx='2' title='Connect' /&gt;" TimeoutMS="1000">
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:UiElementExists.Target>
+            </ui:UiElementExists>
+            <If Condition="[connectComIDX]" sap:VirtualizedContainerService.HintSize="410,52" sap2010:WorkflowViewState.IdRef="If_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="496,295" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,184" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <TryCatch.Try>
+                      <Sequence sap:VirtualizedContainerService.HintSize="498,697" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="338,52" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                          <ui:CommentOut.Body>
+                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,268" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Connect'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="36c430e6-5cd0-4a67-bf7d-ee8f4ac908da" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable DesignTimeRectangle="578, 150, 109, 26" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Connect'" FullSelectorArgument="&lt;wnd cls='TcxButton' idx='2' title='Connect' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TcxButton' check:text='Connect' title='Connect' /&gt;" Guid="152e1be7-3a1f-452b-a9a3-65977355d26e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHEAAAAeCAYAAAAb3PFfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANHSURBVGhD7ZbNaxNBGIenHirizYPoRfwfREVyFCwUxIMnYQtCFQv1IAqiZKsUe4i0iB7UbBF7kQrGIoUsOVjxYg96MElPCiqimO8vbDHQSn/Ou+lkN+lsaMFNsukcHvad33xkmIcZwqrVKhT+RknsAeoSjxhQ+IxIJGLRILFcqaCi8AVCItUNEkvlMsoKXyAkUq0k+hQlsQdQEnsAV4nFUgklj7l1iklzxfYQEqluq8ToDYafz5gS+R9wlVgoFlH0mLlrDIshhuejjUycYdLxCjlCItVtl0iQSHzlLHLecnmvGCJXGSbPblNkTEcgELDRY/Jx7WBpGkND01iS9XlAd0gEw3KE4c04w9p7hj8xhtmRrYtcmh7i4nTEHFlMb2y3lW6RmC8UUGgDQiIJpC8+MXx7wnD55B4MXxjB8MVL0nk2SRiaBiMp6+MkDWj1G6rDFJlmwNDtm6ubLfJN6zh/z4Rez2k87cdua0bS3otHCIlUN0jM5fPItwEhcX2Bfz8yfH5cExi6O2cJ7D9tgh0al861SNDhBmHK+vImgvwgg2atnTA0BILmxhw7z5tBBLi8hFtureP4DRpn5QlLWH38pv6m3COERKo7InGe/0u1bmCF4cuGwKl785bAYzO/wW6ugg3E3EW2OrDmPksSlyHLqd0q37hZNpJ1muc15x7hKjGbyyHXJsRttG5g6KUl8MRMCQceAfsfroONcZFcomxuLhflt0RDOC7pi4f5YYYRd7b54UdlObW3mjf3bzX3CCGR6o5JJEjk6PnB2g18uoy+CeD6u1Xsu/0dLMQVu0rMIR7mzyTJcWTRILVJMH/uoo5xwejmQ3aTVW83rmMTR5ie0+ac5jXtx0u6RiJBAo/e/4HjL4C+cS5u5AO/hWtgk60lEjWRjueOZFGfdaD2E2gdrJsst1zUzvVdciE0Gqy1tXC8tpaHuErMZLPIdgA2uIBzs0UcfrCC3WPL2HtnBf2Tfy2JsvGKbF0i1Q0S05kMMh2CDby2ZDrZdYVvkIuUjd/pCIlUd41EGSTy4NSKEinBVWIqnUa6yyCRsnynIyRS3fUSFXKUxB7AVeKvVAophS8QEqlWEn2Kq0SFvyCJRF2iwr8oib6nin9+8oID7aFNugAAAABJRU5ErkJggg==" InformativeScreenshot="d6c1ad1a0988c15069691771e9ce7c4a.png" ScopeSelectorArgument="&lt;wnd app='tz0console.exe' cls='TFclient' title='Trauma Zer0 Console by Trauma Zer0' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target DesignTimeRectangle="570, 145, 343, 38" FriendlyName="'Connect Cache'" FullSelectorArgument="&lt;wnd cls='TPanel' idx='20' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TPanel' check:fulltext='Connect&amp;#xD;&amp;#xA;Cache Browser&amp;#xD;&amp;#xA;Discovery Network&amp;#xD;&amp;#xA;Bookmark' /&gt;" ImageBase64="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" SearchSteps="Selector, FuzzySelector, Image" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NClick.Target>
+                              </uix:NClick>
+                            </Sequence>
+                          </ui:CommentOut.Body>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:CommentOut>
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'TcxButton' - Connect" sap:VirtualizedContainerService.HintSize="338,107" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition Position="Center">
+                              <ui:CursorPosition.OffsetX>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetX>
+                              <ui:CursorPosition.OffsetY>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetY>
+                            </ui:CursorPosition>
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8fe40ce0-c871-43c0-a10b-67a0809a7013" InformativeScreenshot="e3a4a901b052dd94541344fc91693afa" Selector="&lt;wnd cls='TcxButton' idx='2' title='Connect' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:Click.Target>
+                        </ui:Click>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,143" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Clicou no Connect de primeira&quot;]" />
+                      </Sequence>
+                    </TryCatch.Try>
+                    <TryCatch.Catches>
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ActivityAction x:TypeArguments="s:Exception">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                          </ActivityAction.Argument>
+                          <Sequence sap:VirtualizedContainerService.HintSize="400,497" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'TcxButton' - Disconect" sap:VirtualizedContainerService.HintSize="338,107" sap2010:WorkflowViewState.IdRef="Click_8" KeyModifiers="None" MouseButton="BTN_LEFT">
+                              <ui:Click.CursorPosition>
+                                <ui:CursorPosition Position="Center">
+                                  <ui:CursorPosition.OffsetX>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:CursorPosition.OffsetX>
+                                  <ui:CursorPosition.OffsetY>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:CursorPosition.OffsetY>
+                                </ui:CursorPosition>
+                              </ui:Click.CursorPosition>
+                              <ui:Click.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2bf9c61a-9f75-4aea-a95c-b3afce29b6fb" InformativeScreenshot="7cc048b82fb947362b1f9a556cd3ab20" Selector="&lt;wnd app='tz0console.exe' cls='TFclient' omit:title='Trauma Zer0 Console by Trauma Zer0*' /&gt;&lt;wnd cls='TcxButton' title='Disconnect' /&gt;">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:Click.Target>
+                            </ui:Click>
+                            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'TcxButton' - Connect" sap:VirtualizedContainerService.HintSize="338,107" sap2010:WorkflowViewState.IdRef="Click_9" KeyModifiers="None" MouseButton="BTN_LEFT">
+                              <ui:Click.CursorPosition>
+                                <ui:CursorPosition Position="Center">
+                                  <ui:CursorPosition.OffsetX>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:CursorPosition.OffsetX>
+                                  <ui:CursorPosition.OffsetY>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:CursorPosition.OffsetY>
+                                </ui:CursorPosition>
+                              </ui:Click.CursorPosition>
+                              <ui:Click.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ec0b0e0f-cf25-42e9-98d9-4ba31b59392d" InformativeScreenshot="a1d4bc242f0225305571b22f8f54171a" Selector="&lt;wnd cls='TcxButton' idx='2' title='Connect' /&gt;">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:Click.Target>
+                            </ui:Click>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,143" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Clicou no Disconnect e depois no Connect&quot;]" />
+                          </Sequence>
+                        </ActivityAction>
+                      </Catch>
+                    </TryCatch.Catches>
+                  </TryCatch>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="500,832" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="440,721" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <TryCatch.Try>
+                      <Sequence sap:VirtualizedContainerService.HintSize="400,493" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="338,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                          <ui:CommentOut.Body>
+                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,268" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Connect'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="36c430e6-5cd0-4a67-bf7d-ee8f4ac908da" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable DesignTimeRectangle="578, 150, 109, 26" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Connect'" FullSelectorArgument="&lt;wnd cls='TcxButton' idx='2' title='Connect' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TcxButton' check:text='Connect' title='Connect' /&gt;" Guid="152e1be7-3a1f-452b-a9a3-65977355d26e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHEAAAAeCAYAAAAb3PFfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANHSURBVGhD7ZbNaxNBGIenHirizYPoRfwfREVyFCwUxIMnYQtCFQv1IAqiZKsUe4i0iB7UbBF7kQrGIoUsOVjxYg96MElPCiqimO8vbDHQSn/Ou+lkN+lsaMFNsukcHvad33xkmIcZwqrVKhT+RknsAeoSjxhQ+IxIJGLRILFcqaCi8AVCItUNEkvlMsoKXyAkUq0k+hQlsQdQEnsAV4nFUgklj7l1iklzxfYQEqluq8ToDYafz5gS+R9wlVgoFlH0mLlrDIshhuejjUycYdLxCjlCItVtl0iQSHzlLHLecnmvGCJXGSbPblNkTEcgELDRY/Jx7WBpGkND01iS9XlAd0gEw3KE4c04w9p7hj8xhtmRrYtcmh7i4nTEHFlMb2y3lW6RmC8UUGgDQiIJpC8+MXx7wnD55B4MXxjB8MVL0nk2SRiaBiMp6+MkDWj1G6rDFJlmwNDtm6ubLfJN6zh/z4Rez2k87cdua0bS3otHCIlUN0jM5fPItwEhcX2Bfz8yfH5cExi6O2cJ7D9tgh0al861SNDhBmHK+vImgvwgg2atnTA0BILmxhw7z5tBBLi8hFtureP4DRpn5QlLWH38pv6m3COERKo7InGe/0u1bmCF4cuGwKl785bAYzO/wW6ugg3E3EW2OrDmPksSlyHLqd0q37hZNpJ1muc15x7hKjGbyyHXJsRttG5g6KUl8MRMCQceAfsfroONcZFcomxuLhflt0RDOC7pi4f5YYYRd7b54UdlObW3mjf3bzX3CCGR6o5JJEjk6PnB2g18uoy+CeD6u1Xsu/0dLMQVu0rMIR7mzyTJcWTRILVJMH/uoo5xwejmQ3aTVW83rmMTR5ie0+ac5jXtx0u6RiJBAo/e/4HjL4C+cS5u5AO/hWtgk60lEjWRjueOZFGfdaD2E2gdrJsst1zUzvVdciE0Gqy1tXC8tpaHuErMZLPIdgA2uIBzs0UcfrCC3WPL2HtnBf2Tfy2JsvGKbF0i1Q0S05kMMh2CDby2ZDrZdYVvkIuUjd/pCIlUd41EGSTy4NSKEinBVWIqnUa6yyCRsnynIyRS3fUSFXKUxB7AVeKvVAophS8QEqlWEn2Kq0SFvyCJRF2iwr8oib6nin9+8oID7aFNugAAAABJRU5ErkJggg==" InformativeScreenshot="d6c1ad1a0988c15069691771e9ce7c4a.png" ScopeSelectorArgument="&lt;wnd app='tz0console.exe' cls='TFclient' title='Trauma Zer0 Console by Trauma Zer0' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target DesignTimeRectangle="570, 145, 343, 38" FriendlyName="'Connect Cache'" FullSelectorArgument="&lt;wnd cls='TPanel' idx='20' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TPanel' check:fulltext='Connect&amp;#xD;&amp;#xA;Cache Browser&amp;#xD;&amp;#xA;Discovery Network&amp;#xD;&amp;#xA;Bookmark' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAUgAAAAqCAYAAADRX8LWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAupSURBVHhe7ZwLcBXVGcePMojIJJJAangooRUt2hktCIixRURAnVIc6dhSQ0eLFhSsIqJigpRiFUWkIEoCAhElDzAQbGIQglIEtKjkISSKPJxI3iE3JSkgkPvv+c7eTc5uzg3g3KCX+30zP3f37N4/yezNz+/s7r0CXFxcXCFaRUVFqK6uNkIl9uzZA4ZhmFDktII8duwYGIZhQhEWJMMwjB9YkAzDMH5gQTIMw/iBBckwDOOHgAmyfxKYIGPNmjWMAdP7mwlNAipIT10d6pigwBakaV8gCOZs0/ubCU0CKshajwceJiiwBWnaFwiCOdv0/mZCExZkiMKCNMOCZHRYkCEKC9IMC5LRYUGGKCZBFs8GimcBe2YAu6cDXzwJFE4FCh4D8id78fmERuy8/yS233sMW+45gk13H0bumBpsGevBx38+6shyZ2P2R8CsrcCMLcD0D4CnNgNTNwFTJJM2AA9mA+PWA2PeAe5IBYa+ZUHrY9c5stzZs1Nk9CoZvVJGr5DRy2X0Uhktf8dJr8noBTJ6rox+TsbJ323oUxa0PnYOHFksSEYnoII8XFuL2jbm2RHCOM6cHbYg9bGiZ4FdDwA7/wDs+K3kN8D2O4Btw4GtQ7348OZT2DjwGN693oP0aw4h+eqvkPyLYqzqvxfv3+7Md2dj5r/VG8pRJD939V7kW9Fq0ApHljt7pvQoSZBkN1oKftRMS37Dn7FEOHgKcN3DMvo+4NIxwAXyd2ovfzdaHyTlr2exIBmdoBJk1tMC374tWJIBwCRI6hpJjnp9eKNkEPDBAC9yf9mInL7fISPGg5XdS/B610Isit6FpJgCrO1X4chqIUjqGqlIirHJ1vpg33KAbPmuky0fVcTLalEmnlKo6rHAkeXOpq6R5Hi2JYYfQY84FiTjn4AKsubwYRxuYzKmCmyfI5A6yclzo4XxeMaMLUh97ItpVte4ZbA699h0DbCxrxcbf+7F+1d5seHKRmTFfIe1PeutA2TN67QTCyI/Q1qfUkeWOxvTcq0XkBT7Jlrr9rLP68DP5FyYyifIvWIKisSjah2dXnRkubOnvWF1jVR9/wJcO8FaXi274T7jZfT90rFShBG/Iyk2QPx6rzpWDDmATnfJ/7FrWSxIRifoBEmQJLFfsl3yoRTjOoE1jwvMHXOWksxJQGxsbDMJOebjzgWFSzBu3BIUmva1AUZBPmFNqT8YoM79GdWr4QV4NSIPqb3LHFl+BakXidFdl833rWjVcY4jyyRImlL7q15/Ai4fJ6PHStdKIYpbq9S4GPINOo5mQTL+CV5BQqB+jcDmWQIn/yNwNEcgZeKZS7JwyTgpxQTkaGM5Cc7tc8qPQZBTgW0jgM391LnHez2B7GgvsqIbsb7rSazrchxro/6HzJ5HrQNkLe36lZpqp/Uud2S1ECTdkBmZAvRfJm210IJkSFDXGPaS6hTRZZ7a9orZqBXx1jT7NIKkGzIj462fh0Roy5CgCrvbEmOXe3xd5O1eNS6GlrEgmVYJqCCra2pQcw6wBUlypCW+FDjwhsDkYR0x/oGJGP/gBOPrmilAUlwckgpM+yQFSYhr6iwTkG2PxSUhKaG540zIbmW8RY7+72UjoWmcjqefp3k7Lqmg+WdpI2xB6mOFjwMf3SYFeb0698iKAt7t7EVm2ClkXHIcaR2PIC3cg/SoWmTG1CPtigq83e0Qki4rQnrvSkeWO1sJ0l2XzvWtaNX+ed+KVlKcepY7mwRJN2SoSIpRv7duwJAUWysxrFYdo2exIBmdgAqyyhDSFtiC9ObK5S6BrxZbcpzzYoaS40WjsiGumGV8rSKfxBWPbNO+6mzES0nFZ1vb+UlxiI3P9r2mebw6Ox6xUoz5/sZVjvZv0HFqPF/JsOn4Fvtd422ELUh9rHCKF1tv8UpBWh3WvyKBzEsakdHhBFLbNeDNC6uR3KEcb0WUq/1U6b0rsKRbMVbHVDmy3NnqcR4quhlDXSKV7Aypjou/qW7RXldF3SThW9ez3Nn0OM+Qadah1CUS1Bm2u1O+S0YcVyJUyHXqIG1xitvq1LqexYJkdIJSkOuf9nWOdQL7fHJ8+ZX1So4DVxyBmH4CYmSOf0m2JiP3PiVAKTrTOG23Nu7rCJsx5Lhf5x5vI0yCzH+0EVt+1YiN1zSqk38mlRpTisTo3UjrVeHIaiHIR963XkA3Znw3YmwBNohnUSIswx0RvouJHV6woJIi1bPc2Y+8DsROtQ41lbilRE2n6a41dZYdRvnGh9UokepZLEhGJ6CCrKyqQtU5wu4iVec45x0lx8ErahEt/1h+8poXYoaUpBSk6bVVVVmyu4tDYp5hX16iFFUi8vRtKbYs0zhtn+m4e/+ZjrcRtiD1sV2TTyF38HfIueqkOvlZUXJ63fkkVoc1YEX7ciS224/Ei7/G8oiDaj/V8uh9WBj1OVb1POTIcmfjoRzfK7Si646uqhMJvjWtLnjOkeXOfmgR0P8R61ASIE2x6bojdZBUdDNGDD3U1DE2XYOU4qRnIvUsFiSjE7SCJEiSk+670+ocl9fT3xGe3HYCkTPlH4ScvfkXZBXyEuXUmcSnjWXF0zbJU06Bs7Tj4rNaCsyfCJu2nTnN5CGRptjucXqd6+dpS0yC/PTh48gZVI/MXg3q5K+POIXMyBNYHV6P5EvKsLTjASwN3483u3yLVT1K5dS6CPMjP8FLEVuR3P2gI8udTeBa+Y9GvWKJka4/0rLdP5QUK8TTqBHP4KiYqYRIY/Soz27xV5wQzvNoyqZHe6hIjCRJhyBvrVDdohhxVAmRRKnGb94tZxonHDksSEYnqAVJkBwH/LMEg1bLv6tZ8geeuFN2jych5N9fa4IkLElqU2ASIe1TsmqeFitp+ROhv3F7Xc/3M27LMive2o5LzLOy2hCTID+Z2IDMG6qQ3tM6+enh/0VaeB1WhddgeacSLAs/iDc7H8LK6BK1n2pmWDb+Hr4By7rtdWS5s9XHCF1Fd6rdRTJ0F03B9Sx3Nn2MkB7loaLuUElQLkl+rZW4cYd6LlLPYkEyOgEVZEVlJSp/AMSduRibchgxCxrQYUY9Os1uwEVzTylBmo5nKpsEqY9tm+hBWv+DWBb9tTr5Z1JTL16F+LB1WNqj2JHlzqbPU1Pp1xupY6Si6472tccqMV0tM8W9WCv+qNZpn57lzqZP0dCNGSp1vdHuGInhR5q5tQripl0Q/TKtYwfkqnE9iwXJ6ARUkOUVFaj4gRAjNylR6lz4mJSnlKTp+FDHFqQ+tu2hWqQO+hpLeu5WJ39hxwIs7FSARWGFWHxpMZZdtg+LI/ZgXueP1X6qJ8PSMDvqPazss8+R5c62BWlPnan2icfVkp51JHFSfSkeU0uS43vC1xbKabie5c7WBXk2JW76TE3D9SwWJKNz3gjSBEmy28sNLEkDJkHumFyH1Tfvx7Ird+PVyDws7JynPiWzKDIfr0VJUUblY0HXT/FixFbMCs9RnSPJcX7MVmQMLHVktRCkYYr9jXjCt9ZcdM2xRV2+0JHlzqYpNn2UUD3SQx0k3ZQh7LvXBG3TNUeaVlPnKOVI++mhcj2LBcnoBFSQZeXlKP+RQZI0jYc6tiDd47mjPcgcWIn0q0uR+tNDSOktiSlFSq8ypFxRird6lCC5+wF1zXFp92LVOWbcUIrNd9U5ckzZGLLS+rYeujljP8Zj0/55dU2SnoOkblJNuWXnSF9UQV97pueYsuk5SPq2Hro5Q4/x6NA396hrkiRQ+iy2nFZT50hSpW/70XNYkIzOeS9Ixow/QQaKYM42vb+Z0IQFGaKwIM2wIBmdgAqytKwMZUxQYAvStC8QBHO26f3NhCYsyBCFBWmGBcnoBFSQTHBBMmBaYnp/M6FJwATJMAxzvsGCZBiG8QMLkmEYxg8sSIZhGD+wIBmGYfzAgmQYhvHDaQW5YcMGMAzDhCKnFaT6LxcXF1eQFT3TWldX971hQXJxcZ23RYL0eDzfm9MLEvg/TAta/Kn0DFEAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector, Image" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NClick.Target>
+                              </uix:NClick>
+                            </Sequence>
+                          </ui:CommentOut.Body>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:CommentOut>
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'TcxButton' - Connect" sap:VirtualizedContainerService.HintSize="338,107" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition Position="Center">
+                              <ui:CursorPosition.OffsetX>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetX>
+                              <ui:CursorPosition.OffsetY>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetY>
+                            </ui:CursorPosition>
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8fe40ce0-c871-43c0-a10b-67a0809a7013" InformativeScreenshot="e3a4a901b052dd94541344fc91693afa" Selector="&lt;wnd cls='TcxButton' title='Connect' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:Click.Target>
+                        </ui:Click>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,143" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Clicou no Connect de primeira&quot;]" />
+                      </Sequence>
+                    </TryCatch.Try>
+                    <TryCatch.Catches>
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ActivityAction x:TypeArguments="s:Exception">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                          </ActivityAction.Argument>
+                          <Sequence sap:VirtualizedContainerService.HintSize="400,497" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'TcxButton' - Disconect" sap:VirtualizedContainerService.HintSize="338,107" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+                              <ui:Click.CursorPosition>
+                                <ui:CursorPosition Position="Center">
+                                  <ui:CursorPosition.OffsetX>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:CursorPosition.OffsetX>
+                                  <ui:CursorPosition.OffsetY>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:CursorPosition.OffsetY>
+                                </ui:CursorPosition>
+                              </ui:Click.CursorPosition>
+                              <ui:Click.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2bf9c61a-9f75-4aea-a95c-b3afce29b6fb" InformativeScreenshot="7cc048b82fb947362b1f9a556cd3ab20" Selector="&lt;wnd app='tz0console.exe' cls='TFclient' omit:title='Trauma Zer0 Console by Trauma Zer0*' /&gt;&lt;wnd cls='TcxButton' title='Disconnect' /&gt;">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:Click.Target>
+                            </ui:Click>
+                            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'TcxButton' - Connect" sap:VirtualizedContainerService.HintSize="338,107" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+                              <ui:Click.CursorPosition>
+                                <ui:CursorPosition Position="Center">
+                                  <ui:CursorPosition.OffsetX>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:CursorPosition.OffsetX>
+                                  <ui:CursorPosition.OffsetY>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:CursorPosition.OffsetY>
+                                </ui:CursorPosition>
+                              </ui:Click.CursorPosition>
+                              <ui:Click.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ec0b0e0f-cf25-42e9-98d9-4ba31b59392d" InformativeScreenshot="a1d4bc242f0225305571b22f8f54171a" Selector="&lt;wnd cls='TcxButton' idx='2' title='Connect' /&gt;">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:Click.Target>
+                            </ui:Click>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,143" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Clicou no Disconnect e depois no Connect&quot;]" />
+                          </Sequence>
+                        </ActivityAction>
+                      </Catch>
+                    </TryCatch.Catches>
+                  </TryCatch>
+                </Sequence>
+              </If.Else>
+            </If>
+            <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="410,133" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="iexplore.exe" />
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="410,52" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,218" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:UiElementExists DisplayName="Element Exists 'TcxButton'" Exists="[connect]" sap:VirtualizedContainerService.HintSize="338,107" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                    <ui:UiElementExists.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="299d41f4-d240-4c4b-beb3-dee434119eb0" InformativeScreenshot="d23a0c6349e142082be4b01298fa7553" Selector="&lt;wnd cls='TcxButton' title='Connect' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:UiElementExists.Target>
+                  </ui:UiElementExists>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="410,52" sap2010:WorkflowViewState.IdRef="CommentOut_6">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="640,1320" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:UiElementExists DisplayName="Element Exists 'TcxButton'" Exists="[botaoDesconectarExiste]" sap:VirtualizedContainerService.HintSize="578,107" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
+                    <ui:UiElementExists.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c83114b9-1fdd-46bb-bdc1-1cad7f4429ba" InformativeScreenshot="0da39013dd90f97bd94b4749c46bc225" Selector="&lt;wnd app='tz0console.exe' cls='TFclient' title='Trauma Zer0 Console by Trauma Zer0 *' /&gt;&lt;wnd cls='TcxButton' title='Disconnect' /&gt;" TimeoutMS="15000">
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:UiElementExists.Target>
+                  </ui:UiElementExists>
+                  <If Condition="[botaoDesconectarExiste]" sap:VirtualizedContainerService.HintSize="578,52" sap2010:WorkflowViewState.IdRef="If_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="400,103" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap:VirtualizedContainerService.HintSize="500,834" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,721" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <TryCatch.Try>
+                            <Sequence sap:VirtualizedContainerService.HintSize="400,493" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="338,52" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                                <ui:CommentOut.Body>
+                                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,268" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Connect'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="36c430e6-5cd0-4a67-bf7d-ee8f4ac908da" Version="V3">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable DesignTimeRectangle="578, 150, 109, 26" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Connect'" FullSelectorArgument="&lt;wnd cls='TcxButton' idx='2' title='Connect' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TcxButton' check:text='Connect' title='Connect' /&gt;" Guid="152e1be7-3a1f-452b-a9a3-65977355d26e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHEAAAAeCAYAAAAb3PFfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANHSURBVGhD7ZbNaxNBGIenHirizYPoRfwfREVyFCwUxIMnYQtCFQv1IAqiZKsUe4i0iB7UbBF7kQrGIoUsOVjxYg96MElPCiqimO8vbDHQSn/Ou+lkN+lsaMFNsukcHvad33xkmIcZwqrVKhT+RknsAeoSjxhQ+IxIJGLRILFcqaCi8AVCItUNEkvlMsoKXyAkUq0k+hQlsQdQEnsAV4nFUgklj7l1iklzxfYQEqluq8ToDYafz5gS+R9wlVgoFlH0mLlrDIshhuejjUycYdLxCjlCItVtl0iQSHzlLHLecnmvGCJXGSbPblNkTEcgELDRY/Jx7WBpGkND01iS9XlAd0gEw3KE4c04w9p7hj8xhtmRrYtcmh7i4nTEHFlMb2y3lW6RmC8UUGgDQiIJpC8+MXx7wnD55B4MXxjB8MVL0nk2SRiaBiMp6+MkDWj1G6rDFJlmwNDtm6ubLfJN6zh/z4Rez2k87cdua0bS3otHCIlUN0jM5fPItwEhcX2Bfz8yfH5cExi6O2cJ7D9tgh0al861SNDhBmHK+vImgvwgg2atnTA0BILmxhw7z5tBBLi8hFtureP4DRpn5QlLWH38pv6m3COERKo7InGe/0u1bmCF4cuGwKl785bAYzO/wW6ugg3E3EW2OrDmPksSlyHLqd0q37hZNpJ1muc15x7hKjGbyyHXJsRttG5g6KUl8MRMCQceAfsfroONcZFcomxuLhflt0RDOC7pi4f5YYYRd7b54UdlObW3mjf3bzX3CCGR6o5JJEjk6PnB2g18uoy+CeD6u1Xsu/0dLMQVu0rMIR7mzyTJcWTRILVJMH/uoo5xwejmQ3aTVW83rmMTR5ie0+ac5jXtx0u6RiJBAo/e/4HjL4C+cS5u5AO/hWtgk60lEjWRjueOZFGfdaD2E2gdrJsst1zUzvVdciE0Gqy1tXC8tpaHuErMZLPIdgA2uIBzs0UcfrCC3WPL2HtnBf2Tfy2JsvGKbF0i1Q0S05kMMh2CDby2ZDrZdYVvkIuUjd/pCIlUd41EGSTy4NSKEinBVWIqnUa6yyCRsnynIyRS3fUSFXKUxB7AVeKvVAophS8QEqlWEn2Kq0SFvyCJRF2iwr8oib6nin9+8oID7aFNugAAAABJRU5ErkJggg==" InformativeScreenshot="d6c1ad1a0988c15069691771e9ce7c4a.png" ScopeSelectorArgument="&lt;wnd app='tz0console.exe' cls='TFclient' title='Trauma Zer0 Console by Trauma Zer0' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                                          <uix:TargetAnchorable.Anchors>
+                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                              <uix:Target DesignTimeRectangle="570, 145, 343, 38" FriendlyName="'Connect Cache'" FullSelectorArgument="&lt;wnd cls='TPanel' idx='20' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TPanel' check:fulltext='Connect&amp;#xD;&amp;#xA;Cache Browser&amp;#xD;&amp;#xA;Discovery Network&amp;#xD;&amp;#xA;Bookmark' /&gt;" ImageBase64="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" SearchSteps="Selector, FuzzySelector, Image" />
+                                            </scg:List>
+                                          </uix:TargetAnchorable.Anchors>
+                                        </uix:TargetAnchorable>
+                                      </uix:NClick.Target>
+                                    </uix:NClick>
+                                  </Sequence>
+                                </ui:CommentOut.Body>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:CommentOut>
+                              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'TcxButton' - Connect" sap:VirtualizedContainerService.HintSize="338,107" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                <ui:Click.CursorPosition>
+                                  <ui:CursorPosition Position="Center">
+                                    <ui:CursorPosition.OffsetX>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:CursorPosition.OffsetX>
+                                    <ui:CursorPosition.OffsetY>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:CursorPosition.OffsetY>
+                                  </ui:CursorPosition>
+                                </ui:Click.CursorPosition>
+                                <ui:Click.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8fe40ce0-c871-43c0-a10b-67a0809a7013" InformativeScreenshot="e3a4a901b052dd94541344fc91693afa" Selector="&lt;wnd cls='TcxButton' idx='2' title='Connect' /&gt;">
+                                    <ui:Target.TimeoutMS>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:Target.TimeoutMS>
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:Click.Target>
+                              </ui:Click>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,143" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Clicou no Connect de primeira&quot;]" />
+                            </Sequence>
+                          </TryCatch.Try>
+                          <TryCatch.Catches>
+                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ActivityAction x:TypeArguments="s:Exception">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                </ActivityAction.Argument>
+                                <Sequence sap:VirtualizedContainerService.HintSize="400,497" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'TcxButton' - Disconect" sap:VirtualizedContainerService.HintSize="338,107" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                    <ui:Click.CursorPosition>
+                                      <ui:CursorPosition Position="Center">
+                                        <ui:CursorPosition.OffsetX>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:CursorPosition.OffsetX>
+                                        <ui:CursorPosition.OffsetY>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:CursorPosition.OffsetY>
+                                      </ui:CursorPosition>
+                                    </ui:Click.CursorPosition>
+                                    <ui:Click.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2bf9c61a-9f75-4aea-a95c-b3afce29b6fb" InformativeScreenshot="7cc048b82fb947362b1f9a556cd3ab20" Selector="&lt;wnd app='tz0console.exe' cls='TFclient' omit:title='Trauma Zer0 Console by Trauma Zer0*' /&gt;&lt;wnd cls='TcxButton' title='Disconnect' /&gt;">
+                                        <ui:Target.TimeoutMS>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:Target.TimeoutMS>
+                                        <ui:Target.WaitForReady>
+                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                        </ui:Target.WaitForReady>
+                                      </ui:Target>
+                                    </ui:Click.Target>
+                                  </ui:Click>
+                                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'TcxButton' - Connect" sap:VirtualizedContainerService.HintSize="338,107" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                    <ui:Click.CursorPosition>
+                                      <ui:CursorPosition Position="Center">
+                                        <ui:CursorPosition.OffsetX>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:CursorPosition.OffsetX>
+                                        <ui:CursorPosition.OffsetY>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:CursorPosition.OffsetY>
+                                      </ui:CursorPosition>
+                                    </ui:Click.CursorPosition>
+                                    <ui:Click.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ec0b0e0f-cf25-42e9-98d9-4ba31b59392d" InformativeScreenshot="a1d4bc242f0225305571b22f8f54171a" Selector="&lt;wnd cls='TcxButton' idx='2' title='Connect' /&gt;">
+                                        <ui:Target.TimeoutMS>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:Target.TimeoutMS>
+                                        <ui:Target.WaitForReady>
+                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                        </ui:Target.WaitForReady>
+                                      </ui:Target>
+                                    </ui:Click.Target>
+                                  </ui:Click>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Clicou no Disconnect e depois no Connect&quot;]" />
+                                </Sequence>
+                              </ActivityAction>
+                            </Catch>
+                          </TryCatch.Catches>
+                        </TryCatch>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'TdxRibbonStatusBar'" sap:VirtualizedContainerService.HintSize="410,107" sap2010:WorkflowViewState.IdRef="GetValue_1">
+              <ui:GetValue.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c99cbf4e-4760-47fa-b6be-0eabb328bafc" InformativeScreenshot="baab3c3a03a641ff825de407f3bf87e9" Selector="&lt;wnd cls='TcxCustomComboBoxInnerEdit' idx='2' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:GetValue.Target>
+              <ui:GetValue.Value>
+                <OutArgument x:TypeArguments="x:String">[statusBar]</OutArgument>
+              </ui:GetValue.Value>
+            </ui:GetValue>
+            <ui:UiElementExists DisplayName="Element Exists 'TcxButton'" Exists="[botaoDesconectarExiste]" sap:VirtualizedContainerService.HintSize="410,107" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c83114b9-1fdd-46bb-bdc1-1cad7f4429ba" InformativeScreenshot="0da39013dd90f97bd94b4749c46bc225" Selector="&lt;wnd app='tz0console.exe' cls='TFclient' title='Trauma Zer0 Console by Trauma Zer0 *' /&gt;&lt;wnd cls='TcxButton' title='Disconnect' /&gt;" TimeoutMS="15000">
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:UiElementExists.Target>
+            </ui:UiElementExists>
+            <If Condition="[not botaoDesconectarExiste]" sap:VirtualizedContainerService.HintSize="410,778" sap2010:WorkflowViewState.IdRef="If_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="376,596" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="540,356" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign sap:VirtualizedContainerService.HintSize="478,61" sap2010:WorkflowViewState.IdRef="Assign_1">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Int32">[io_ErrosDeConexao]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Int32">[io_ErrosDeConexao + 1]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="478,52" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Erros de conexão em sequência: &quot; + io_ErrosDeConexao.ToString]">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:LogMessage>
+                        <If Condition="[io_ErrosDeConexao &gt;= 3]" sap:VirtualizedContainerService.HintSize="478,52" sap2010:WorkflowViewState.IdRef="If_4">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If.Then>
+                            <Sequence sap:VirtualizedContainerService.HintSize="400,103" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap:VirtualizedContainerService.HintSize="400,201" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Throw Exception="[new BusinessRuleException(&quot;Não foi possível conectar na maquina no Trauma0, possivelmente ATM está fora&quot;)]" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                      </Sequence>
+                    </ui:CommentOut.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:CommentOut>
+                  <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" AppliesTo="OnlyCurrentUser" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="334,133" sap2010:WorkflowViewState.IdRef="KillProcess_2" ProcessName="Tz0Console" />
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Trauma0_Login.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Trauma0\Trauma0_Login.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                      <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Trauma0">[in_Trauma0]</InOutArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                  <Throw Exception="[new BusinessRuleException(&quot;Não foi possível conectar na maquina no Trauma0, possivelmente ATM está fora&quot;)]" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="400,103" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="440, 70, 864, 626" FilePath="D:\Trauma Zer0\Tz0\ModulesApp\tz0console.exe" IconBase64="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" InformativeScreenshot="768efd2dff8c1cf2d9de443ce0eedb39.png" Selector="&lt;wnd app='tz0console.exe' cls='TFclient' title='Trauma Zer0 Console by Trauma Zer0' /&gt;" Title="Trauma Zer0 Console by Trauma Zer0" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="506,141" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;ATM acessado&quot;]" />
+  </Sequence>
+</Activity>

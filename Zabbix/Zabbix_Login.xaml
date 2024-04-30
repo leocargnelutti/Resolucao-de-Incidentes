@@ -1,0 +1,217 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Zabbix_Login" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="out_ZabbixBrowser" Type="OutArgument(ui:UiElement)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>960,1978</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Zabbix_Login_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="34">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="82">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="572,1913" sap2010:WorkflowViewState.IdRef="Sequence_6">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="userName" />
+      <Variable x:TypeArguments="ss:SecureString" Name="password" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:GetRobotCredential AssetName="ZabbixCredential" CacheStrategy="None" DisplayName="Get Credential" FolderPath="[In_Config(&quot;OrchestratorQueueFolder&quot;).ToString]" sap:VirtualizedContainerService.HintSize="510,143" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[password]" Username="[userName]">
+      <ui:GetRobotCredential.TimeoutMS>
+        <InArgument x:TypeArguments="x:Int32" />
+      </ui:GetRobotCredential.TimeoutMS>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:GetRobotCredential>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Zabbix" sap:VirtualizedContainerService.HintSize="510,1619" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" OutUiElement="[out_ZabbixBrowser]" ScopeGuid="ec13482b-a135-4aa5-9da0-3c084fdec46a" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence sap:VirtualizedContainerService.HintSize="476,1402" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Boolean" Name="siteJaLogado" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:UiElementExists DisplayName="Element Exists 'A  #signout'" Exists="[siteJaLogado]" sap:VirtualizedContainerService.HintSize="414,107" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c9dd3065-1509-41b5-acdf-d763b280544a" InformativeScreenshot="e67c2762d95b7ec76a2b9d4dda90f497" Selector="&lt;html app='chrome.exe' title='Dashboards' /&gt;&lt;webctrl class='icon-profile' tag='A' /&gt;" TimeoutMS="5000">
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:UiElementExists.Target>
+            </ui:UiElementExists>
+            <If Condition="[not siteJaLogado]" sap:VirtualizedContainerService.HintSize="414,1140" sap2010:WorkflowViewState.IdRef="If_2">
+              <If.Then>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="380,958" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Username'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="ec13482b-a135-4aa5-9da0-3c084fdec46a" Text="[userName]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://monitoramento.saqueepague.com.br/" DesignTimeRectangle="551, 285, 280, 36" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT name'" FullSelectorArgument="&lt;webctrl id='name' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='name' tag='INPUT' type='text' class='' aaname='Username' /&gt;" Guid="1e10aece-43cd-4f7a-a40a-826f34073a9d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAARwAAAAoCAYAAAAsaEXvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAClSURBVHhe7dQhAYAwAABB+qzAWqx/GnAYwLFXJ67CHWOME6AgHCBzh7PWAtjiNZw5J8CvhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkPsMB2OERDsBuwgEi47wAkd89LF8m9e4AAAAASUVORK5CYII=" InformativeScreenshot="9c327c322e15ecdf0b8478ec05bd7422.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Zabbix' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="551, 266, 65, 17" ElementType="Text" FriendlyName="'Username'" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='Username' check:innerText='Username' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEUAAAAVCAYAAAAQAyPeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF/SURBVFhH7ZTbkcMgDEXTj7ukGQrYBqiBHmiABliEeEhCTmL7L6OPM7MELK4OsK/jOIrBMSkKJkXBpCiYFAUixZWQcomeL2j4WHKOxcvffxSTonBLigupjnMnleDoeqwz51Mobs75EmudML6vc3/wdwzsmxTceT0x7yOMPVmDeeB3bT1mWHM5ejKHXJcibw0bYw0Zem3cA5EgQ/Dct9UboruQbf06CGxejkkGlg/3Xz3ueYHnUigwx24GAEFGaBmqN7ndppMcgAslSQn0tLd8a/+2l7wZrR7v58bz6adXg7MTrvBnRXkuhT6H7WZIKVs9XM9rUB5LWaxNyElsN4VyXcrcY6z55qa8kyJvigKRgh/J9wW8b5a8yxN5i6tSVkOzxgMpnw8NYVKwKRGih9T/cVVYyP60ZMi5/o4Uuh7Hd5/P+J4evCaKSwFak7DxgjYBtCCn8yP4gN4c2eQnKZUmddSC5nhj16RUZH9CCLBLMUyKhklRMCkKJkXBpGwc5R8Z9KgJgJSEugAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Password'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,218" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="ec13482b-a135-4aa5-9da0-3c084fdec46a" SecureText="[password]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://monitoramento.saqueepague.com.br/" DesignTimeRectangle="551, 356, 280, 36" DesignTimeScaleFactor="1" ElementType="InputBoxPassword" FriendlyName="'INPUT password'" FullSelectorArgument="&lt;webctrl id='password' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='password' tag='INPUT' type='password' class='' aaname='Password' /&gt;" Guid="4a7fae00-db08-40f2-b885-404a2203ac47" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAARwAAAAoCAYAAAAsaEXvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAClSURBVHhe7dQhAYAwAABB+qzAWqx/GnAYwLFXJ67CHWOME6AgHCBzh7PWAtjiNZw5J8CvhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkhANkPsMB2OERDsBuwgEi47wAkd89LF8m9e4AAAAASUVORK5CYII=" InformativeScreenshot="8af58621c606833367df887f81f3438d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Zabbix' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="551, 337, 61, 17" ElementType="Text" FriendlyName="'Password'" FullSelectorArgument="&lt;webctrl aaname='Password' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Password' tag='LABEL' type='' class='' check:innerText='Password' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEEAAAAVCAYAAAAZ6IOkAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGLSURBVFhH7VTdeQMhDOs+bMkyrMEM7MACtwC18dmIn7ukyUvb8KAvAXFCFoYv51z5dOwQCDsEwg6BsEMgQAi+xHyU45iRo+8++usIiepKwcZTCCm0xYJQ0j8L4oUQXPExw0dzx2BAda1xuUQ/6Eyc6E0aORZ/juUgUgnIm06b13VRedXwsWRYn94L4QwABMTQWVBIvSkc33BNnzkNeVh78rJf4/qxdC360wCsrrrvT0MYRUZU/iIExB1XNbAQOS3dk9tX/kuRvRfspJmvIXVd9cR1aG3WsHoPqpCt6Vtb51dm1xybhyDJIJtvhZ0BYeD2rXi5CmEsmNF33pPXAWHFd/dtbUwKfo7TQqx41uU9+FcN/44Q4MR07sKYQDTF4AOudkCkOdWSDuBHrnmai+x1Zv6l6/A4BFwj48uHEQO642zMWrpG/IzvSC0K5vrxKqRhrvp4KwSCilRwEbKJnmhrdQHq3XFWNJhbnaLNmw6GtAqBYAETSC9ed8LnYodA2CEQdgiEHQJhh+Bc+QZUOSDhBDYM3AAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <uix:NCheck Action="Uncheck" DisplayName="Check/Uncheck 'checked'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NCheck_1" ScopeIdentifier="ec13482b-a135-4aa5-9da0-3c084fdec46a" Version="V3">
+                    <uix:NCheck.Target>
+                      <uix:TargetAnchorable BrowserURL="https://monitoramento.saqueepague.com.br/" DesignTimeRectangle="551, 408, 16, 16" DesignTimeScaleFactor="1" ElementType="CheckBox" FriendlyName="'Checkbox'" FullSelectorArgument="&lt;webctrl id='autologin' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='autologin' tag='INPUT' type='checkbox' class='checkbox-radio' aaname='Remember me for 30 days' /&gt;" Guid="d304404b-d570-4d9c-830b-0b340300e376" InformativeScreenshot="55869983baee51a69688b4a39a0b5a3c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Zabbix' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="551, 408, 186, 17" ElementType="Text" FriendlyName="'checked'" FullSelectorArgument="&lt;webctrl aaname='Remember me for 30 days' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Remember me for 30 days' tag='LABEL' type='' class='' check:innerText='Remember me for 30 days' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAL4AAAAVCAYAAAD4r1SwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARBSURBVGhD7ZpLahwxEIZznwF7a4JjkkAIXnnppXGIDV6EgIlXickwm0BIztHX6DP0HeYCcwFFpWeVqiS1xnaYYbT4wK1HVemvv9XG+NVisVCdzqHRjd85SILxj46O1Pn5ubq4uGgC9hwfH7PAnc4uE4wPBj47O1MnJydNwB7Yi4N2OrtOMD7c3pKx5wB7cdBOZ9d5QeOv1LjeqM1GYD2qFVu/iwxq0vVOgzS3D+AeTGoQ17RiNfG9ZNoMU5jbbNZqXCXzJVajWrfu2ZKtjP/uw0f1+vRNeC4Zn5vGNWMakvFdZM+Nb4z0XIYHrB7rcWWfU6Omz+YlaMi/y8YH0998/6Wu7n8E87cZX8MESb4O5IsAYmsxBhAFz+ObJxGL3Dq0hmGCxg0on90L4359aKw3/oTisa8VrkODXujVuNaxxjAvadFWD5DPR0g08DGgpjhOTQk5J12v1VkwYKZvPrapmdRT8ICDnFPrzF+kOB9ronktrlcuF44rvXxZ4+Mb3eNNf7f8qy5vvoTxpxmfH4IK6BodDOcbHwUi69PmJLeIFSR9RvnJfp8rxjPrk1riGelZrMlQIwW2qSeXj2HOHmu39eSfbe74XIVoK9diYmZeTqql3R+0cKZPz+rXm9rxJQQ6ZebYWo1ofDA1vtGBnOmBNuO7A2CjJkXZBntB02YLYoYYck5zcLde3EuaXc6Nm43j0nkbTxI8paWeWj4yzuaEszi9vFlLJqXYWOQFnaE9pawtXWsheiZroXZfyxzdmfHB7Ff3j8bg3vwl09eMHz83CCSEKVJaUzAfPqQhGD82hOFyikYjIkEMnDttRKzHxErzGJ5o/Ew9tXwhhgcbP2MqrCWrZQZxT6PxxXryeoezBm1wPvgZ78N7+JkB8cbH5r9++Kk+F0wPzL3xrclpIXVzRKP5MdwsQ2L8VHwMa+5TjV8wyosYv5CP8R+Mb+o1OWy/SV802ZhV41udwbw+ZqpneKkglqizrUm6HIq/419/WxrD3y3/qMvbr2QeM9f4gBECFxGEo+si0Wh+DDfLEMwii49hjagaPzkDaljN2M9t/DnxCNj40lkSvbImdYj5Uf/4ftkDlrK2XAchvzvfqMdLPZdyZY0PnL59r24ff6tPD0s2h2kxvi8iHsCuY80vNCxvfPdzMC5QaS4TGPJR4+drtfO4Ftyc5zZ+LV+I4SHGd2sLzzXj+/yxF0k92LjwTPrIobU7bbHx8V7zjHsh7HHjTBOhjqLxATC/NI5pM77GCIRFtgLaTxKAi0zFrhhfYxsa4+G17UbTP49OdICs1fizCPOsAQJt9WgK+RiJ8QGqDZ2rG1+T5Cd9ALxBDdSQEianW2//lBr34DlzThObxpQ19i+Eh9dRNf4cZON3Oi8PGJ+9fDMIxu//pNbZP+Bmr39VJILx+78ld/YK9yvVNrc9EIzf6RwS3fidg6Qbv3OALNQ/kMMA7GIntD4AAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NCheck.Target>
+                  </uix:NCheck>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Sign in'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ec13482b-a135-4aa5-9da0-3c084fdec46a" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://monitoramento.saqueepague.com.br/" DesignTimeRectangle="551, 450, 280, 37" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Sign in'" FullSelectorArgument="&lt;webctrl id='enter' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='enter' tag='BUTTON' type='submit' class='' aaname='Sign in' check:innerText='Sign in' /&gt;" Guid="6a32ddf6-1f04-4017-90c2-9f2820ddc35f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAARwAAAApCAYAAADnNJZKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIISURBVHhe7dmxbhoxAIDhvg9TFFFFzdOErU9Ax5bOeYu8QMYsWbNEYorEkAGxJdl4ARcc7nK+O2gp4CH+hk86zj7I4l8+58tgMAgAOQgOkE0dnLPhMFyNf4XvP68BjmLdlLPh125wrsaT3gcADjFataUTnL6JAMcgOEA2ggNkIzhANoIDZCM4QDaCA2QjOEA2ggNkIzhANoIDZCM4pbmdhZflMiwbnh+acx7Dc+fecdw8vYXl6yzc9IxRBsEpSYzNW5jetu8tw8vTXToXTkBwCrJth5Heb+1wkh3RIkybc+PY5l41Z8cOpvk78Xo+C9PX6rtFrwSCU5KHRVzYu1+XmsF5v65DUMUnCc7q8/wxeXZbODrBqX9nJf5trd0Xn47gFKZa6LXOjqQRnHUEWuP383Zw0kjE8TpAqU5wku9u7az4lASnYDEOm/B87Eo+Fn6MQiseSSgEhz0JDpvXmUW4j58Fh9MRnGLcxQPa3vOVJByNhe+ViiMTnJJsOTROI9Fc+O/Xuw+NBYd/JzilqaLRkO56Wgs/mb/5F3gVFMFhT4LDXmIotgQF/kZw2C45TF6zC+EwgsNO8RWpfqUSGw4jOEA2ggNkIzhANoIDZCM4QDaCA2QjOEA2ggNkIzhANp3gjMaT3okAhxj9mHSDc37xbTXwu/cBgP+xbsr5xWU3OACnJjhAJoPwB5Cw3CMjJKarAAAAAElFTkSuQmCC" InformativeScreenshot="f11558bc671a47d9fab1fdc52a87bedf.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Zabbix' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="400,103" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFOSURBVDhPlZNBTsJAFIYfGzYkQIArsOQGHIBbcADOwIo9t2DBCbgCUWPU2lbUatKJoGiCQWOMtH2+f0yTNs60OsnHNDP/+2Y6dMgnOlkRbaRXwC0hzaHGIzom+Xl+IOJbUKnwXaPBQbPJAfosGKvXOZAMsqgR4RY7UBi4SCUleCJDNhBEEOYEfrvNURjGfDgkJp4mE7vg8ockUipmS4PAqVbZKRDAnmCFM8GR1d4WC138sVyy22rFmEPOKgBYASu9zma6+Espvu71+DyTKRQgiO2ixfs93w8GekfZjFWAoBoOdTHaejT6VQyMAgSDfp/j3U4Xv0yn+sTxSqUCBFfdLn96ni7G4UF4KuCV8Fx4Bph8HI8TXW34BsD7fB65tZr5b8wJLA0Cr9Mxf0iwov8LuR2klwkDN4LcskKQA2tBBFu6kispExvY/gNqfKKjb8zWNnAyg480AAAAAElFTkSuQmCC" InformativeScreenshot="b30ff07500778ef5219126d58458805c.jpg" Selector="&lt;html app='chrome.exe' url='https://monitoramento.saqueepague.com.br/index.php' /&gt;" Url="[in_Config(&quot;URLZabbix&quot;).ToString]" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
