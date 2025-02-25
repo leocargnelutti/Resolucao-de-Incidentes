@@ -14,7 +14,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>960,4304</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>959,4981</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -125,7 +125,7 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="684,4239" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="769,4916" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="numeroLogico" />
       <Variable x:TypeArguments="x:String" Name="ipterminal" />
@@ -136,15 +136,15 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="622,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
-    <Sequence DisplayName="Colocar Caso em Atendimento" sap:VirtualizedContainerService.HintSize="622,1955" sap2010:WorkflowViewState.IdRef="Sequence_39">
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="707,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
+    <Sequence DisplayName="Colocar Caso em Atendimento" sap:VirtualizedContainerService.HintSize="707,81" sap2010:WorkflowViewState.IdRef="Sequence_39">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <If Condition="[in_TransactionItem.SpecificContent(&quot;Status&quot;).ToString = &quot;Aguardando atendimento&quot;]" sap:VirtualizedContainerService.HintSize="560,1844" sap2010:WorkflowViewState.IdRef="If_7">
+      <If Condition="[in_TransactionItem.SpecificContent(&quot;Status&quot;).ToString = &quot;Aguardando atendimento&quot;]" sap:VirtualizedContainerService.HintSize="582,2416" sap2010:WorkflowViewState.IdRef="If_7">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -152,7 +152,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence sap:VirtualizedContainerService.HintSize="526,1662" sap2010:WorkflowViewState.IdRef="Sequence_28">
+          <Sequence sap:VirtualizedContainerService.HintSize="548,2234" sap2010:WorkflowViewState.IdRef="Sequence_28">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="elementoExiste" />
             </Sequence.Variables>
@@ -161,20 +161,21 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="484,1574" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_SalesforceBrowser]" ScopeGuid="503047a7-6317-4c00-a21b-9ff371e6e007" Version="V2">
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="506,2146" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_SalesforceBrowser]" ScopeGuid="503047a7-6317-4c00-a21b-9ff371e6e007" Version="V2">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1437" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="472,2009" sap2010:WorkflowViewState.IdRef="Sequence_37">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="388,82" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="[in_Config(&quot;URL_CasoSales&quot;).ToString.Replace(&quot;[IDCASO]&quot;, in_TransactionItem.SpecificContent(&quot;IDcaso&quot;).ToString).ToString]" Version="V3" />
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Origem do caso'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="503047a7-6317-4c00-a21b-9ff371e6e007" Version="V3">
+                    <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="410,82" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="[in_Config(&quot;URL_CasoSales&quot;).ToString.Replace(&quot;[IDCASO]&quot;, in_TransactionItem.SpecificContent(&quot;IDcaso&quot;).ToString).ToString]" Version="V3" />
+                    <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="410,90" sap2010:WorkflowViewState.IdRef="Delay_18" />
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Origem do caso'" sap:VirtualizedContainerService.HintSize="410,157" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="503047a7-6317-4c00-a21b-9ff371e6e007" Version="V3">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable BrowserURL="https://saqueepague.lightning.force.com/lightning/r/Case/500SG000005jpbWYAQ/view?ws=%2Flightning%2Fr%2FReport%2F00OSG00000478pl2AA%2Fview" CvElementArea="437, 596, 22, 21" CvType="Icon" DesignTimeRectangle="441, 599, 14, 14" DesignTimeScaleFactor="1" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;one-record-home-flexipage2&amp;gt;forcegenerated-adg-rollup_component___force-generated__flexipage_-record-page___-caso_-manutencao_-correcao___-case___-v-i-e-w&amp;gt;forcegenerated-flexipage_caso_manutencao_correcao_case__view_js&amp;gt;record_flexipage-desktop-record-page-decorator&amp;gt;div&amp;gt;records-record-layout-event-broker&amp;gt;slot&amp;gt;slot&amp;gt;flexipage-record-home-template-desktop2&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;slot&amp;gt;flexipage-component2&amp;gt;slot&amp;gt;flexipage-tabset2&amp;gt;div&amp;gt;lightning-tabset&amp;gt;div&amp;gt;slot&amp;gt;slot&amp;gt;flexipage-tab2&amp;gt;slot&amp;gt;flexipage-component2&amp;gt;slot&amp;gt;records-lwc-detail-panel&amp;gt;records-base-record-form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;records-lwc-record-layout&amp;gt;forcegenerated-detailpanel_case___0124t00000056nbqay___full___view___recordlayout2&amp;gt;records-record-layout-block&amp;gt;slot&amp;gt;records-record-layout-section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;slot&amp;gt;records-record-layout-row&amp;gt;slot&amp;gt;records-record-layout-item&amp;gt;div&amp;gt;div&amp;gt;dl&amp;gt;dd&amp;gt;div&amp;gt;button&amp;gt;span' idx='3' isleaf='1' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl type='' class='inline-edit-trigger-icon slds-button__icon slds-button__icon_hint' isleaf='1' tag='SPAN' aaname='' /&gt;" Guid="52f03a1d-f412-4680-ac80-48bfeeac791b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC3SURBVDhPxdIxDoMgFMbxHprV1RGuwRm8AiOMrKyMMr7ms/AqFg20Jv0nDBr55Yk+6Kb+B3nvyRiTr94NQSEEEkJsa1mWfPdVN4RJUkqktWZsP1kXhA3YqJRibJomijHmJzqggpRVsD2CLqEjgnWcpHQKnSE48FZNaBRBH5BzbhhBFYSH8f7zPA8hqIKklNuPVrBeBDG0ritPUbBeBDFkrWUI07Q+8VUMYSMw/GzfVJ3RL90EET0BFzq32KEUbX8AAAAASUVORK5CYII=" InformativeScreenshot="79ceb0a9b3da056fc0423a430fd5f74c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='00781970 | Caso | Salesforce' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                           <uix:TargetAnchorable.Anchors>
@@ -185,8 +186,101 @@
                         </uix:TargetAnchorable>
                       </uix:NClick.Target>
                     </uix:NClick>
-                    <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Delay_16" />
-                    <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll 'GuiasDetalhesChatterMai…'" sap:VirtualizedContainerService.HintSize="388,257" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" InteractionMode="HardwareEvents" MovementUnits="10" ScopeIdentifier="503047a7-6317-4c00-a21b-9ff371e6e007" Version="V3">
+                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="410,52" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <TryCatch.Try>
+                        <Sequence sap:VirtualizedContainerService.HintSize="450,259" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NMouseScroll_3" InteractionMode="HardwareEvents" MovementUnits="10" Version="V3">
+                            <uix:NMouseScroll.SearchedElement>
+                              <uix:SearchedElement>
+                                <uix:SearchedElement.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://saqueepague.lightning.force.com/lightning/r/Case/500SG00000JC2MVYA1/view" CVScreenId="15a372a9-25e9-4aaf-9bd7-d8035c3b9fee" CvTextArea="483, 389, 44, 12" CvTextArgument="* Status" CvType="Text" DesignTimeRectangle="482, 382, 54, 21" DesignTimeScaleFactor="1.100000023841858" ElementType="Text" FriendlyName="'*Status'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Status' class='slds-form-element__label' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Status' class='slds-form-element__label' tag='LABEL' type='' check:innerText='*Status' /&gt;" Guid="a941cc85-762c-4946-bbc1-3184dacb804c" InformativeScreenshot="894ba17481e7e3bc599246147deeeb4d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='01050598 | Caso | Salesforce' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target CVScreenId="15a372a9-25e9-4aaf-9bd7-d8035c3b9fee" CvTextArea="80, 194, 90, 17" CvTextArgument="Dados gerais" CvType="Text" DesignTimeRectangle="81, 184, 88, 33" ElementType="Text" FriendlyName="'Dados gerais'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Dados gerais' class='test-id__section-header-title' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Dados gerais' class='test-id__section-header-title' tag='SPAN' type='' check:innerText='Dados gerais' /&gt;" SearchSteps="FuzzySelector, CV" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:SearchedElement.Target>
+                                <uix:SearchedElement.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:SearchedElement.Timeout>
+                              </uix:SearchedElement>
+                            </uix:NMouseScroll.SearchedElement>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NMouseScroll>
+                          <uix:NCheckState DisplayName="Check App State 'Closed'" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="503047a7-6317-4c00-a21b-9ff371e6e007" Version="V3">
+                            <uix:NCheckState.IfExists>
+                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,203" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Throw Exception="[New BusinessRuleException(&quot;Já havia sido encerrado&quot;)]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                              </Sequence>
+                            </uix:NCheckState.IfExists>
+                            <uix:NCheckState.IfNotExists>
+                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Sequence>
+                            </uix:NCheckState.IfNotExists>
+                            <uix:NCheckState.Target>
+                              <uix:TargetAnchorable BrowserURL="https://saqueepague.lightning.force.com/lightning/r/Case/500SG00000JC2MVYA1/view" CVScreenId="15a372a9-25e9-4aaf-9bd7-d8035c3b9fee" CvTextArea="622, 393, 44, 13" CvTextArgument="Closed" CvType="Text" DesignTimeRectangle="609, 382, 258, 35" DesignTimeScaleFactor="1.100000023841858" ElementType="Button" FriendlyName="'Closed'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aria-label='Status' aria-role='combobox' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aria-label='Status' aria-role='combobox' tag='BUTTON' type='button' class='slds-combobox__input slds-input_faux fix-slds-input_faux slds-combobox__input-value' aaname='Closed' check:innerText='Closed' /&gt;" Guid="981e107c-af9f-46fa-82b3-01b14e2d38ca" InformativeScreenshot="695a69ad6373cf4b63659d65699811b6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='01050598 | Caso | Salesforce' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="15a372a9-25e9-4aaf-9bd7-d8035c3b9fee" CvTextArea="483, 389, 44, 12" CvTextArgument="* Status" CvType="Text" DesignTimeRectangle="482, 382, 54, 21" ElementType="Text" FriendlyName="'*Status'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Status' class='slds-form-element__label' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Status' class='slds-form-element__label' tag='LABEL' type='' check:innerText='*Status' /&gt;" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NCheckState.Target>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NCheckState>
+                        </Sequence>
+                      </TryCatch.Try>
+                      <TryCatch.Catches>
+                        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,212" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ActivityAction x:TypeArguments="s:Exception">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                            </ActivityAction.Argument>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Não foi possível ver se estava encerrado ou não&quot;]" />
+                          </ActivityAction>
+                        </Catch>
+                      </TryCatch.Catches>
+                    </TryCatch>
+                    <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="410,90" sap2010:WorkflowViewState.IdRef="Delay_16" />
+                    <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll 'GuiasDetalhesChatterMai…'" sap:VirtualizedContainerService.HintSize="410,257" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" InteractionMode="HardwareEvents" MovementUnits="10" ScopeIdentifier="503047a7-6317-4c00-a21b-9ff371e6e007" Version="V3">
                       <uix:NMouseScroll.SearchedElement>
                         <uix:SearchedElement>
                           <uix:SearchedElement.Target>
@@ -207,36 +301,56 @@
                         <uix:TargetAnchorable BrowserURL="https://saqueepague.lightning.force.com/lightning/r/Case/500SG000007ZfsIYAS/view" DesignTimeRectangle="20, 377, 888, 1339" DesignTimeScaleFactor="1" ElementType="CheckBox" FriendlyName="'GuiasDetalhesChatterMai…'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl class='slds-tabs_card' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl class='slds-tabs_card' tag='DIV' type='' aaname='' check:innerText='Guias&amp;#xD;&amp;#xA;Detalhes&amp;#xD;&amp;#xA;Chatter&amp;#xD;&amp;#xA;Informações iniciais&amp;#xD;&amp;#xA;Número lógico&amp;#xD;&amp;#xA;05400297-ZAFFARI SININBU-OKI' /&gt;" Guid="f21ad13a-12ae-4f32-84b8-302aa7eb8849" InformativeScreenshot="a868d9a484364ceb719079ab7d7b1a9c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='00817965 | Caso | Salesforce' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                       </uix:NMouseScroll.Target>
                     </uix:NMouseScroll>
-                    <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'Aguardando atendimento'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NCheck_1" ScopeIdentifier="503047a7-6317-4c00-a21b-9ff371e6e007" Version="V3">
-                      <uix:NCheck.Target>
-                        <uix:TargetAnchorable BrowserURL="https://saqueepague.lightning.force.com/lightning/r/Case/500SG000007NNOAYA4/view" CVScreenId="43977299-fede-4066-b8ce-2833aef7ea23" CvElementArea="184, 461, 19, 19" CvType="CheckBox" DesignTimeRectangle="186, 462, 16, 16" DesignTimeScaleFactor="1" ElementType="CheckBox" FriendlyName="'Checkbox'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl tag='INPUT' type='checkbox' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl tag='INPUT' type='checkbox' class='' aaname='Atendimento aceito' /&gt;" Guid="aeced95c-2246-494f-9a76-a1b8cd75f48e" InformativeScreenshot="1be4b3acebdf6c535fbc255fa190cd60.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='00814961 | Caso | Salesforce' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
-                          <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                              <uix:Target CVScreenId="43977299-fede-4066-b8ce-2833aef7ea23" CvTextArea="74, 424, 160, 16" CvTextArgument="Aguardando atendimento" CvType="Text" DesignTimeRectangle="75, 416, 160, 30" ElementType="Text" FriendlyName="'Aguardando atendimento'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Aguardando atendimento' class='test-id__section-header-title' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Aguardando atendimento' class='test-id__section-header-title' tag='SPAN' type='' check:innerText='Aguardando atendimento' /&gt;" SearchSteps="FuzzySelector, CV" />
-                            </scg:List>
-                          </uix:TargetAnchorable.Anchors>
-                        </uix:TargetAnchorable>
-                      </uix:NCheck.Target>
-                    </uix:NCheck>
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Salvar'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="503047a7-6317-4c00-a21b-9ff371e6e007" Version="V3">
-                      <uix:NClick.Target>
-                        <uix:TargetAnchorable BrowserURL="https://saqueepague.lightning.force.com/lightning/r/Case/500SG000005jpbWYAQ/view" CvElementArea="471, 617, 71, 35" CvTextArea="489, 628, 37, 13" CvTextArgument="Salvar" CvType="Button" DesignTimeRectangle="473, 619, 68, 32" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Salvar'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Salvar' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Salvar' tag='BUTTON' type='button' class='slds-button slds-button_brand' check:innerText='Salvar' /&gt;" Guid="3d6f6796-6b69-46f3-b8ec-50a7002cbbf7" InformativeScreenshot="633f69a437d6ebddf9e6862a5d4e80ab.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='00781970 | Caso | Salesforce' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
-                          <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                              <uix:Target CvElementArea="384, 618, 86, 35" CvTextArea="402, 628, 52, 13" CvTextArgument="Cancelar" CvType="Button" DesignTimeRectangle="386, 619, 83, 32" ElementType="Button" FriendlyName="'Cancelar'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Cancelar' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Cancelar' tag='BUTTON' type='button' class='slds-button slds-button_neutral' check:innerText='Cancelar' /&gt;" SearchSteps="FuzzySelector, CV" />
-                            </scg:List>
-                          </uix:TargetAnchorable.Anchors>
-                        </uix:TargetAnchorable>
-                      </uix:NClick.Target>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </uix:NClick>
-                    <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Delay_17" />
-                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                    <If Condition="[in_TransactionItem.SpecificContent(&quot;Status&quot;).ToString = &quot;Atendimento NOC&quot;]" sap:VirtualizedContainerService.HintSize="410,704" sap2010:WorkflowViewState.IdRef="If_8">
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,442" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'Aguardando atendimento'" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NCheck_1" ScopeIdentifier="503047a7-6317-4c00-a21b-9ff371e6e007" Version="V3">
+                            <uix:NCheck.Target>
+                              <uix:TargetAnchorable BrowserURL="https://saqueepague.lightning.force.com/lightning/r/Case/500SG000007NNOAYA4/view" CVScreenId="43977299-fede-4066-b8ce-2833aef7ea23" CvElementArea="184, 461, 19, 19" CvType="CheckBox" DesignTimeRectangle="186, 462, 16, 16" DesignTimeScaleFactor="1" ElementType="CheckBox" FriendlyName="'Checkbox'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl tag='INPUT' type='checkbox' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl tag='INPUT' type='checkbox' class='' aaname='Atendimento aceito' /&gt;" Guid="aeced95c-2246-494f-9a76-a1b8cd75f48e" InformativeScreenshot="1be4b3acebdf6c535fbc255fa190cd60.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='00814961 | Caso | Salesforce' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="43977299-fede-4066-b8ce-2833aef7ea23" CvTextArea="74, 424, 160, 16" CvTextArgument="Aguardando atendimento" CvType="Text" DesignTimeRectangle="75, 416, 160, 30" ElementType="Text" FriendlyName="'Aguardando atendimento'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Aguardando atendimento' class='test-id__section-header-title' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Aguardando atendimento' class='test-id__section-header-title' tag='SPAN' type='' check:innerText='Aguardando atendimento' /&gt;" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NCheck.Target>
+                          </uix:NCheck>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Salvar'" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="503047a7-6317-4c00-a21b-9ff371e6e007" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://saqueepague.lightning.force.com/lightning/r/Case/500SG000005jpbWYAQ/view" CvElementArea="471, 617, 71, 35" CvTextArea="489, 628, 37, 13" CvTextArgument="Salvar" CvType="Button" DesignTimeRectangle="473, 619, 68, 32" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Salvar'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Salvar' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Salvar' tag='BUTTON' type='button' class='slds-button slds-button_brand' check:innerText='Salvar' /&gt;" Guid="3d6f6796-6b69-46f3-b8ec-50a7002cbbf7" InformativeScreenshot="633f69a437d6ebddf9e6862a5d4e80ab.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='00781970 | Caso | Salesforce' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CvElementArea="384, 618, 86, 35" CvTextArea="402, 628, 52, 13" CvTextArgument="Cancelar" CvType="Button" DesignTimeRectangle="386, 619, 83, 32" ElementType="Button" FriendlyName="'Cancelar'" FullSelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Cancelar' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl sfl-path='oneOne/lafAppLayoutHost:host/navexDesktopLayoutContainer/navexContentRegionNavContainer:contentRegionNavContainer/navexWorkspaceManager/navexWorkspace/lafPageHost/oneRecordHomeFlexipage2Wrapper/oneRecordHomeFlexipage2:recordHomeFlexipage2' tag='ONE-RECORD-HOME-FLEXIPAGE2' /&gt;&lt;webctrl aaname='Cancelar' tag='BUTTON' type='button' class='slds-button slds-button_neutral' check:innerText='Cancelar' /&gt;" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NClick.Target>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NClick>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                    <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="410,90" sap2010:WorkflowViewState.IdRef="Delay_17" />
+                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="410,52" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -273,7 +387,7 @@
                                     </uix:NClick>
                                     <uix:NCheckState DisplayName="Check App State 'Salvar alterações'" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="503047a7-6317-4c00-a21b-9ff371e6e007" Version="V3">
                                       <uix:NCheckState.IfExists>
-                                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,270" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_29">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -446,8 +560,8 @@
         </If.Else>
       </If>
     </Sequence>
-    <ui:Matches FirstMatch="{x:Null}" DisplayName="Find Matching Patterns" sap:VirtualizedContainerService.HintSize="622,60" sap2010:WorkflowViewState.IdRef="Matches_1" Input="[in_TransactionItem.SpecificContent(&quot;NumeroLogico&quot;).ToString]" IsBuilderTabModified="False" Pattern="\d{8}" RegexOption="IgnoreCase, Compiled" Result="[numeroLogico]" />
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Zabbix\Zabbix.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="622,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Zabbix\Zabbix.xaml">
+    <ui:Matches FirstMatch="{x:Null}" DisplayName="Find Matching Patterns" sap:VirtualizedContainerService.HintSize="707,60" sap2010:WorkflowViewState.IdRef="Matches_1" Input="[in_TransactionItem.SpecificContent(&quot;NumeroLogico&quot;).ToString]" IsBuilderTabModified="False" Pattern="\d{8}" RegexOption="IgnoreCase, Compiled" Result="[numeroLogico]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Zabbix\Zabbix.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="707,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Zabbix\Zabbix.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Zabbix">[in_ZabbixBrowser]</InOutArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_NumeroSep">[numeroLogico.First().Value]</InArgument>
@@ -455,7 +569,7 @@
         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Trauma0\Trauma0_AcessarATM.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="622,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Trauma0\Trauma0_AcessarATM.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Trauma0\Trauma0_AcessarATM.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="707,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Trauma0\Trauma0_AcessarATM.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InOutArgument x:TypeArguments="ui:UiElement" x:Key="in_Trauma0">[io_Trauma0]</InOutArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_IpTerminal">[ipterminal]</InArgument>
@@ -464,7 +578,7 @@
         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_AtmFora">[out_AtmFora]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <If Condition="[out_AtmFora]" sap:VirtualizedContainerService.HintSize="622,1474" sap2010:WorkflowViewState.IdRef="If_6">
+    <If Condition="[out_AtmFora]" sap:VirtualizedContainerService.HintSize="707,4025" sap2010:WorkflowViewState.IdRef="If_6">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -472,14 +586,14 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="521,631" sap2010:WorkflowViewState.IdRef="Sequence_26">
+        <Sequence sap:VirtualizedContainerService.HintSize="476,474" sap2010:WorkflowViewState.IdRef="Sequence_26">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479,141" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;ATM Fora, avançar para operações&quot;]" />
-          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,209" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;ATM Fora, avançar para operações&quot;]" />
+          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
             <ui:MultipleAssign.AssignOperations>
               <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
@@ -518,8 +632,14 @@
                 </ui:AssignOperation>
               </scg:List>
             </ui:MultipleAssign.AssignOperations>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
           </ui:MultipleAssign>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Salesforce\AvançarEtapa.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="479,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Salesforce\AvançarEtapa.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Salesforce\AvançarEtapa.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Salesforce\AvançarEtapa.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">[in_TransactionItem]</InArgument>
               <InArgument x:TypeArguments="ui:UiElement" x:Key="in_SalesforceBrowser">[in_SalesforceBrowser]</InArgument>
@@ -536,13 +656,13 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="376,661" sap2010:WorkflowViewState.IdRef="Sequence_27">
+        <Sequence sap:VirtualizedContainerService.HintSize="673,3369" sap2010:WorkflowViewState.IdRef="Sequence_27">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="Delay_13">
+          <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="631,52" sap2010:WorkflowViewState.IdRef="Delay_13">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -550,7 +670,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </Delay>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="StartServicoZabbix.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="StartServicoZabbix.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="StartServicoZabbix.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="631,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="StartServicoZabbix.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Trauma0">[io_Trauma0]</InOutArgument>
               <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
@@ -562,7 +682,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:InvokeWorkflowFile>
-          <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="Delay_14">
+          <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="631,52" sap2010:WorkflowViewState.IdRef="Delay_14">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -570,27 +690,27 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </Delay>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="VerificaZabbixAgent.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="VerificaZabbixAgent.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="VerificaZabbixAgent.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="631,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="VerificaZabbixAgent.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Trauma0">[io_Trauma0]</InOutArgument>
               <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ZabbixRodando">[out_ZabbixRodando]</OutArgument>
             </ui:InvokeWorkflowFile.Arguments>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:InvokeWorkflowFile>
-          <If Condition="[out_ZabbixRodando = False]" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="If_4">
+          <If Condition="[out_ZabbixRodando = False]" sap:VirtualizedContainerService.HintSize="631,2699" sap2010:WorkflowViewState.IdRef="If_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="521,1125" sap2010:WorkflowViewState.IdRef="Sequence_22">
+              <Sequence sap:VirtualizedContainerService.HintSize="597,2517" sap2010:WorkflowViewState.IdRef="Sequence_22">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="resultadoTnet" />
                 </Sequence.Variables>
@@ -599,16 +719,16 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479,141" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Zabbix não está rodando, aplicando TNET&quot;]" />
-                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="AplicarTNET.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="479,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="AplicarTNET.xaml">
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="555,141" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Zabbix não está rodando, aplicando TNET&quot;]" />
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="AplicarTNET.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="555,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="AplicarTNET.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
                     <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
                     <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Trauma0">[io_Trauma0]</InOutArgument>
                     <OutArgument x:TypeArguments="x:String" x:Key="out_ResultadoTnet">[resultadoTnet]</OutArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479,141" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Resultado TNET: &quot; + resultadoTnet.ToString]" />
-                <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,147" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="555,141" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Resultado TNET: &quot; + resultadoTnet.ToString]" />
+                <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="555,147" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
                   <ui:MultipleAssign.AssignOperations>
                     <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                       <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -630,17 +750,17 @@
                     </scg:List>
                   </ui:MultipleAssign.AssignOperations>
                 </ui:MultipleAssign>
-                <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="479,90" sap2010:WorkflowViewState.IdRef="Delay_15" />
-                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="VerificaZabbixAgent.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="479,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="VerificaZabbixAgent.xaml">
+                <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="555,90" sap2010:WorkflowViewState.IdRef="Delay_15" />
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="VerificaZabbixAgent.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="555,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="VerificaZabbixAgent.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
                     <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Trauma0">[io_Trauma0]</InOutArgument>
                     <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ZabbixRodando">[out_ZabbixRodando]</OutArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
-                <If Condition="[out_ZabbixRodando]" sap:VirtualizedContainerService.HintSize="479,52" sap2010:WorkflowViewState.IdRef="If_5">
+                <If Condition="[out_ZabbixRodando]" sap:VirtualizedContainerService.HintSize="555,1444" sap2010:WorkflowViewState.IdRef="If_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -692,16 +812,30 @@
                       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479,141" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Zabbix rodando, encerrar caso&quot;]" />
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Salesforce\AvançarEtapa.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="479,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Salesforce\AvançarEtapa.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">[in_TransactionItem]</InArgument>
-                          <InArgument x:TypeArguments="ui:UiElement" x:Key="in_SalesforceBrowser">[in_SalesforceBrowser]</InArgument>
-                          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                          <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">
+                            <VisualBasicValue x:TypeArguments="ui:QueueItem" ExpressionText="in_TransactionItem" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="ui:UiElement" x:Key="in_SalesforceBrowser">
+                            <VisualBasicValue x:TypeArguments="ui:UiElement" ExpressionText="in_SalesforceBrowser" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                            <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
+                          </InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="BreakTriggerScopeInArgument">
                             <Literal x:TypeArguments="x:String" Value="" />
                           </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_Observacoes">Execução Robô: Aplicada Tnet de Instalação do Agent Zabbix</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_Direcionamento">Resolução remota NOC</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_Causa">Baixa de imagem</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_Acoes">Aplicada Tnet de Instalação do Agent Zabbix</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_Observacoes">
+                            <Literal x:TypeArguments="x:String">Execução Robô: Aplicada Tnet de Instalação do Agent Zabbix</Literal>
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_Direcionamento">
+                            <Literal x:TypeArguments="x:String">Resolução remota NOC</Literal>
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_Causa">
+                            <Literal x:TypeArguments="x:String">Outra</Literal>
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_Acoes">
+                            <Literal x:TypeArguments="x:String">Aplicada Tnet de Instalação do Agent Zabbix</Literal>
+                          </InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                     </Sequence>
@@ -821,22 +955,36 @@
                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479,141" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Funcionou, encerrar o caso&quot;]" />
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Salesforce\AvançarEtapa.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="479,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Salesforce\AvançarEtapa.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">[in_TransactionItem]</InArgument>
-                    <InArgument x:TypeArguments="ui:UiElement" x:Key="in_SalesforceBrowser">[in_SalesforceBrowser]</InArgument>
-                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                    <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">
+                      <VisualBasicValue x:TypeArguments="ui:QueueItem" ExpressionText="in_TransactionItem" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="ui:UiElement" x:Key="in_SalesforceBrowser">
+                      <VisualBasicValue x:TypeArguments="ui:UiElement" ExpressionText="in_SalesforceBrowser" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                      <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
+                    </InArgument>
                     <InArgument x:TypeArguments="x:String" x:Key="BreakTriggerScopeInArgument">
                       <Literal x:TypeArguments="x:String" Value="" />
                     </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Observacoes">Execução Robô: Start no Zabbix realizado com sucesso</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Direcionamento">Resolução remota NOC</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Causa">Baixa de imagem</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Acoes">Aplicado comando de Start no serviço do Zabbix</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Observacoes">
+                      <Literal x:TypeArguments="x:String">Execução Robô: Start no Zabbix realizado com sucesso</Literal>
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Direcionamento">
+                      <Literal x:TypeArguments="x:String">Resolução remota NOC</Literal>
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Causa">
+                      <Literal x:TypeArguments="x:String">Outra</Literal>
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Acoes">
+                      <Literal x:TypeArguments="x:String">Aplicado comando de Start no serviço do Zabbix</Literal>
+                    </InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
               </Sequence>
             </If.Else>
           </If>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Trauma0\Trauma0_DesconectarATM.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Trauma0\Trauma0_DesconectarATM.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Trauma0\Trauma0_DesconectarATM.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="631,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Trauma0\Trauma0_DesconectarATM.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="ui:UiElement" x:Key="in_Trauma0">[io_Trauma0]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>

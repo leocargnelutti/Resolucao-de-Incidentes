@@ -3,7 +3,7 @@
     <x:Property Name="io_Trauma0" Type="InOutArgument(ui:UiElement)" />
     <x:Property Name="out_ZabbixRodando" Type="OutArgument(x:Boolean)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1224,5561</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1376,8132</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -40,6 +40,7 @@
       <x:String>System.Net.Mail</x:String>
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -104,9 +105,10 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="1234,5496" sap2010:WorkflowViewState.IdRef="Sequence_22">
+  <Sequence sap:VirtualizedContainerService.HintSize="1386,8067" sap2010:WorkflowViewState.IdRef="Sequence_22">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="existeServices" />
     </Sequence.Variables>
@@ -115,21 +117,21 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1172,141" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Verificando serviço do Agent Zabbix&quot;]" />
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="1172,5023" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InUiElement="[io_Trauma0]" ScopeGuid="dd6f458e-2ec9-40c6-9679-6f5fd136a086" Version="V2">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1324,141" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Verificando serviço do Agent Zabbix&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="1324,7594" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InUiElement="[io_Trauma0]" ScopeGuid="dd6f458e-2ec9-40c6-9679-6f5fd136a086" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1138,4886" sap2010:WorkflowViewState.IdRef="Sequence_19">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1290,7457" sap2010:WorkflowViewState.IdRef="Sequence_19">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="1076,90" sap2010:WorkflowViewState.IdRef="Delay_7" />
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Process'" sap:VirtualizedContainerService.HintSize="1076,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dd6f458e-2ec9-40c6-9679-6f5fd136a086" Version="V3">
+            <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="1228,90" sap2010:WorkflowViewState.IdRef="Delay_7" />
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Process'" sap:VirtualizedContainerService.HintSize="1228,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dd6f458e-2ec9-40c6-9679-6f5fd136a086" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable CVScreenId="2cf27b6f-cf30-4adb-a229-515449dff4a8" CvTextArea="71, 268, 39, 11" CvTextArgument="Process" CvType="Text" DesignTimeRectangle="71, 266, 41, 16" DesignTimeScaleFactor="1" FriendlyName="'Process'" FullSelectorArgument="&lt;wnd cls='TcxCustomInnerTreeView' /&gt;&lt;ctrl name='Process' role='outline item' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TcxCustomInnerTreeView' /&gt;&lt;ctrl name='Process' role='outline item' automationid='' check:text='Process' /&gt;" Guid="ad6735cb-941f-4e2e-8cdd-b936f5dbe027" InformativeScreenshot="ccbb2f739fc0286737c12880c8497ddd.png" ScopeSelectorArgument="&lt;wnd app='tz0console.exe' cls='TFclient' title='Trauma Zer0 Console by Trauma Zer0 [05500160-10.211.169.82\Not l*' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
@@ -140,7 +142,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="1076,52" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" Shortcuts="[d(hk)][k(right)][u(hk)]" Version="V3">
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="1228,52" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" Shortcuts="[d(hk)][k(right)][u(hk)]" Version="V3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -148,7 +150,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NKeyboardShortcuts>
-            <uix:NCheckState DisplayName="Check App State 'Services'" sap:VirtualizedContainerService.HintSize="1076,52" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="dd6f458e-2ec9-40c6-9679-6f5fd136a086" Version="V3">
+            <uix:NCheckState DisplayName="Check App State 'Services'" sap:VirtualizedContainerService.HintSize="1228,708" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="dd6f458e-2ec9-40c6-9679-6f5fd136a086" Version="V3">
               <uix:NCheckState.IfExists>
                 <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_9">
                   <sap:WorkflowViewStateService.ViewState>
@@ -178,23 +180,23 @@
               </uix:NCheckState.Target>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NCheckState>
-            <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="1076,52" sap2010:WorkflowViewState.IdRef="Delay_8">
+            <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="1228,90" sap2010:WorkflowViewState.IdRef="Delay_8">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </Delay>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1076,52" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1228,385" sap2010:WorkflowViewState.IdRef="TryCatch_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -217,14 +219,14 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                     </ActivityAction.Argument>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Não existe aba Services&quot;]" />
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Não existe aba Services&quot;]" />
                   </ActivityAction>
                 </Catch>
               </TryCatch.Catches>
             </TryCatch>
-            <uix:NCheckState DisplayName="Check App State 'Services'" sap:VirtualizedContainerService.HintSize="1076,4076" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="dd6f458e-2ec9-40c6-9679-6f5fd136a086" Version="V3">
+            <uix:NCheckState DisplayName="Check App State 'Services'" sap:VirtualizedContainerService.HintSize="1228,5620" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="dd6f458e-2ec9-40c6-9679-6f5fd136a086" Version="V3">
               <uix:NCheckState.IfExists>
-                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="572,3859" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="724,5403" sap2010:WorkflowViewState.IdRef="Sequence_11">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Int32" Name="contador" />
                     <Variable x:TypeArguments="x:String" Name="servicoZabbix" />
@@ -234,8 +236,8 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="510,90" sap2010:WorkflowViewState.IdRef="Delay_9" />
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Zabbix Agent'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="510,218" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="dd6f458e-2ec9-40c6-9679-6f5fd136a086" Version="V3">
+                  <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="662,90" sap2010:WorkflowViewState.IdRef="Delay_9" />
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Zabbix Agent'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="662,218" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="dd6f458e-2ec9-40c6-9679-6f5fd136a086" Version="V3">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable CVScreenId="a18878e5-d26b-45de-9a8d-66cbfa627140" CvElementArea="1157, 152, 191, 23" CvType="InputBox" DesignTimeRectangle="1161, 156, 152, 13" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Zabbix Agent'" FullSelectorArgument="&lt;wnd cls='TcxTabSheet' title='Process' /&gt;&lt;wnd cls='TcxTabSheet' title='Services' /&gt;&lt;wnd cls='TcxFindPanelMRUEditInnerEdit' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TcxTabSheet' title='Process' /&gt;&lt;wnd cls='TcxTabSheet' title='Services' /&gt;&lt;wnd cls='TcxFindPanelMRUEditInnerEdit' check:text='Zabbix Agent' /&gt;" Guid="bcca0938-f449-4765-a7eb-ed63127880b7" InformativeScreenshot="d060f98c5dae99ac72004001df756a8b.png" ScopeSelectorArgument="&lt;wnd app='tz0console.exe' cls='TFclient' title='Trauma Zer0 Console by Trauma Zer0 [05101229-10.211.195.98\Not l*' /&gt;" SearchSteps="Selector, CV" Version="V2" Visibility="Interactive" />
                     </uix:NTypeInto.Target>
@@ -245,13 +247,37 @@
                       </InArgument>
                     </uix:NTypeInto.Text>
                   </uix:NTypeInto>
-                  <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="510,90" sap2010:WorkflowViewState.IdRef="Delay_10" />
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Refresh'" sap:VirtualizedContainerService.HintSize="510,157" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dd6f458e-2ec9-40c6-9679-6f5fd136a086" Version="V3">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable CVScreenId="6dfcfbee-a096-4639-b7f7-1431e97e8444" CvTextArea="19, 97, 40, 12" CvTextArgument="Refresh" CvType="Text" DesignTimeRectangle="13, 58, 54, 66" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Refresh'" FullSelectorArgument="&lt;wnd aaname='Custom 4' cls='TdxRibbon' /&gt;&lt;wnd aaname='Services' cls='TdxRibbonGroupsDockControl' /&gt;&lt;ctrl name='Services' role='tool bar' /&gt;&lt;ctrl name='Refresh' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Custom 4' cls='TdxRibbon' /&gt;&lt;wnd aaname='Services' cls='TdxRibbonGroupsDockControl' /&gt;&lt;ctrl name='Services' role='tool bar' /&gt;&lt;ctrl name='Refresh' role='push button' automationid='' check:text='Refresh' /&gt;" Guid="6b6360e6-70b1-485d-9ddc-5db9466d14b5" InformativeScreenshot="fd122bbf6f9dccbe9b9c5053a29c50ae.png" ScopeSelectorArgument="&lt;wnd app='tz0console.exe' cls='TFclient' title='Trauma Zer0 Console by Trauma Zer0 [05500160-10.211.169.82\Not l*' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
-                    </uix:NClick.Target>
-                  </uix:NClick>
-                  <Assign sap:VirtualizedContainerService.HintSize="510,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+                  <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="662,90" sap2010:WorkflowViewState.IdRef="Delay_10" />
+                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="662,385" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                    <TryCatch.Try>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Refresh'" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dd6f458e-2ec9-40c6-9679-6f5fd136a086" Version="V3">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable CVScreenId="6dfcfbee-a096-4639-b7f7-1431e97e8444" CvTextArea="19, 97, 40, 12" CvTextArgument="Refresh" CvType="Text" DesignTimeRectangle="13, 58, 54, 66" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Refresh'" FullSelectorArgument="&lt;wnd aaname='Custom 4' cls='TdxRibbon' /&gt;&lt;wnd aaname='Services' cls='TdxRibbonGroupsDockControl' /&gt;&lt;ctrl name='Services' role='tool bar' /&gt;&lt;ctrl name='Refresh' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Custom 4' cls='TdxRibbon' /&gt;&lt;wnd aaname='Services' cls='TdxRibbonGroupsDockControl' /&gt;&lt;ctrl name='Services' role='tool bar' /&gt;&lt;ctrl name='Refresh' role='push button' automationid='' check:text='Refresh' /&gt;" Guid="6b6360e6-70b1-485d-9ddc-5db9466d14b5" InformativeScreenshot="fd122bbf6f9dccbe9b9c5053a29c50ae.png" ScopeSelectorArgument="&lt;wnd app='tz0console.exe' cls='TFclient' title='Trauma Zer0 Console by Trauma Zer0 [05500160-10.211.169.82\Not l*' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                        </uix:NClick.Target>
+                      </uix:NClick>
+                    </TryCatch.Try>
+                    <TryCatch.Catches>
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ActivityAction x:TypeArguments="s:Exception">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                          </ActivityAction.Argument>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Refresh'" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dd6f458e-2ec9-40c6-9679-6f5fd136a086" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable CVScreenId="6c8ac7db-ab51-4258-a30c-18a27af362f3" CvTextArea="19, 97, 40, 12" CvTextArgument="Refresh" CvType="Text" DesignTimeRectangle="13, 58, 54, 66" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Refresh'" FullSelectorArgument="&lt;wnd aaname='Custom 4' cls='TdxRibbon' /&gt;&lt;wnd aaname='Services' cls='TdxRibbonGroupsDockControl' /&gt;&lt;ctrl name='Services' role='tool bar' /&gt;&lt;ctrl name='Refresh' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Custom 4' cls='TdxRibbon' /&gt;&lt;wnd aaname='Services' cls='TdxRibbonGroupsDockControl' /&gt;&lt;ctrl name='Services' role='tool bar' /&gt;&lt;ctrl name='Refresh' role='push button' automationid='' check:text='Refresh' /&gt;" Guid="1431a12e-311f-476e-aa03-4493edba2ba9" InformativeScreenshot="2d1d304765d433fed2883a316fa84715.png" ScopeSelectorArgument="&lt;wnd app='tz0console.exe' cls='TFclient' title='Trauma Zer0 Console by Trauma Zer0 [DESKTOP-DE8QQR1-10.190.48.11*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                        </ActivityAction>
+                      </Catch>
+                    </TryCatch.Catches>
+                  </TryCatch>
+                  <Assign sap:VirtualizedContainerService.HintSize="662,82" sap2010:WorkflowViewState.IdRef="Assign_1">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Int32">[contador]</OutArgument>
                     </Assign.To>
@@ -259,7 +285,16 @@
                       <InArgument x:TypeArguments="x:Int32">0</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[existeServices = &quot;&quot; And contador &lt; 15]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="510,698" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+                  <Assign sap:VirtualizedContainerService.HintSize="662,82" sap2010:WorkflowViewState.IdRef="Assign_6">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[existeServices]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">nao</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Delay Duration="00:00:08" sap:VirtualizedContainerService.HintSize="662,90" sap2010:WorkflowViewState.IdRef="Delay_13" />
+                  <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[existeServices = &quot;&quot; And contador &lt; 15]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="662,698" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
                     <ui:InterruptibleDoWhile.Body>
                       <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,562" sap2010:WorkflowViewState.IdRef="Sequence_13">
                         <sap:WorkflowViewStateService.ViewState>
@@ -295,24 +330,34 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:InterruptibleDoWhile>
-                  <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="510,90" sap2010:WorkflowViewState.IdRef="Delay_11" />
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'TcxFindPanelMRUEditInne…'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="510,218" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="dd6f458e-2ec9-40c6-9679-6f5fd136a086" Text="Zabbix Agent" Version="V3">
+                  <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="662,90" sap2010:WorkflowViewState.IdRef="Delay_11" />
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'TcxFindPanelMRUEditInne…'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="662,218" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="dd6f458e-2ec9-40c6-9679-6f5fd136a086" Text="Zabbix Agent" Version="V3">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable CVScreenId="6dfcfbee-a096-4639-b7f7-1431e97e8444" CvElementArea="1157, 152, 196, 23" CvType="InputBox" DesignTimeRectangle="1161, 156, 186, 13" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'TcxFindPanelMRUEditInne…'" FullSelectorArgument="&lt;wnd cls='TcxTabSheet' title='Process' /&gt;&lt;wnd cls='TcxTabSheet' title='Services' /&gt;&lt;wnd cls='TcxFindPanelMRUEditInnerEdit' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TcxTabSheet' title='Process' /&gt;&lt;wnd cls='TcxTabSheet' title='Services' /&gt;&lt;wnd cls='TcxFindPanelMRUEditInnerEdit' /&gt;" Guid="4c2275e2-7fb5-4511-9015-82efda62556c" InformativeScreenshot="ca9c1f163c8d6b741743face7c01eb8a.png" ScopeSelectorArgument="&lt;wnd app='tz0console.exe' cls='TFclient' title='Trauma Zer0 Console by Trauma Zer0 [05500160-10.211.169.82\Not l*' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
                     </uix:NTypeInto.Target>
                   </uix:NTypeInto>
-                  <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="510,90" sap2010:WorkflowViewState.IdRef="Delay_12" />
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Zabbix Agent'" sap:VirtualizedContainerService.HintSize="510,157" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dd6f458e-2ec9-40c6-9679-6f5fd136a086" Version="V3">
+                  <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="662,90" sap2010:WorkflowViewState.IdRef="Delay_12" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Zabbix Agent'" sap:VirtualizedContainerService.HintSize="662,157" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dd6f458e-2ec9-40c6-9679-6f5fd136a086" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable DesignTimeRectangle="182, 146, 1191, 429" DesignTimeScaleFactor="1" FriendlyName="'Zabbix Agent'" FullSelectorArgument="&lt;wnd cls='TcxTabSheet' title='Process' /&gt;&lt;wnd cls='TcxTabSheet' title='Services' /&gt;&lt;wnd cls='TcxGridSite' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TcxTabSheet' title='Process' /&gt;&lt;wnd cls='TcxTabSheet' title='Services' /&gt;&lt;wnd cls='TcxGridSite' check:text='Zabbix Agent' /&gt;" Guid="68fe510c-0804-43c6-9687-2a6eaebe6098" InformativeScreenshot="0e7c6110dc1faac7c822b310f8cc4fc5.png" ScopeSelectorArgument="&lt;wnd app='tz0console.exe' cls='TFclient' title='Trauma Zer0 Console by Trauma Zer0 [05500160-10.211.169.82\Not l*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
                     </uix:NClick.Target>
                   </uix:NClick>
-                  <ui:CopySelectedText SendWindowMessages="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Copy Selected Text" sap:VirtualizedContainerService.HintSize="510,25" sap2010:WorkflowViewState.IdRef="CopySelectedText_1">
+                  <Assign sap:VirtualizedContainerService.HintSize="662,82" sap2010:WorkflowViewState.IdRef="Assign_5">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[servicoZabbix]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:CopySelectedText SendWindowMessages="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Copy Selected Text" sap:VirtualizedContainerService.HintSize="662,25" sap2010:WorkflowViewState.IdRef="CopySelectedText_1">
                     <ui:CopySelectedText.Result>
                       <OutArgument x:TypeArguments="x:String">[servicoZabbix]</OutArgument>
                     </ui:CopySelectedText.Result>
                   </ui:CopySelectedText>
-                  <If Condition="[servicoZabbix.Contains(&quot;Zabbix Agent&#x9;Running&quot;)]" sap:VirtualizedContainerService.HintSize="510,1389" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If Condition="[servicoZabbix.Contains(&quot;Zabbix Agent&#x9;Running&quot;)]" sap:VirtualizedContainerService.HintSize="662,2331" sap2010:WorkflowViewState.IdRef="If_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -338,21 +383,13 @@
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence sap:VirtualizedContainerService.HintSize="476,854" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                      <Sequence sap:VirtualizedContainerService.HintSize="628,1796" sap2010:WorkflowViewState.IdRef="Sequence_17">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_4">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="x:Boolean">[out_ZabbixRodando]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-                          </Assign.Value>
-                        </Assign>
-                        <If Condition="[servicoZabbix.Contains(&quot;Zabbix Agent&#x9;Stopped&quot;)]" sap:VirtualizedContainerService.HintSize="434,644" sap2010:WorkflowViewState.IdRef="If_3">
+                        <If Condition="[servicoZabbix.Contains(&quot;Zabbix Agent&#x9;Stopped&quot;)]" sap:VirtualizedContainerService.HintSize="586,1708" sap2010:WorkflowViewState.IdRef="If_3">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -360,23 +397,73 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <Sequence sap:VirtualizedContainerService.HintSize="376,231" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                            <Sequence sap:VirtualizedContainerService.HintSize="476,353" sap2010:WorkflowViewState.IdRef="Sequence_20">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Serviço Zabbix Agent está parado&quot;]" />
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Serviço Zabbix Agent está parado&quot;]" />
+                              <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_7">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Boolean">[out_ZabbixRodando]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                </Assign.Value>
+                              </Assign>
                             </Sequence>
                           </If.Then>
                           <If.Else>
-                            <Sequence sap:VirtualizedContainerService.HintSize="376,231" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                            <Sequence sap:VirtualizedContainerService.HintSize="552,1173" sap2010:WorkflowViewState.IdRef="Sequence_21">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Serviço Zabbix Agent não existe no terminal&quot;]" />
+                              <uix:NGetText DisplayName="Get Text 'Zabbix Agent'" sap:VirtualizedContainerService.HintSize="510,157" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="dd6f458e-2ec9-40c6-9679-6f5fd136a086" TextString="[servicoZabbix]" Version="V3">
+                                <uix:NGetText.Target>
+                                  <uix:TargetAnchorable DesignTimeRectangle="182, 146, 1191, 429" DesignTimeScaleFactor="1" FriendlyName="'Zabbix Agent'" FullSelectorArgument="&lt;wnd cls='TcxTabSheet' title='Process' /&gt;&lt;wnd cls='TcxTabSheet' title='Services' /&gt;&lt;wnd cls='TcxGridSite' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TcxTabSheet' title='Process' /&gt;&lt;wnd cls='TcxTabSheet' title='Services' /&gt;&lt;wnd cls='TcxGridSite' /&gt;" Guid="65211df5-ee00-4708-84f1-a2270e1a7e91" InformativeScreenshot="5981de7696162eca002b2283c1784c82.png" ScopeSelectorArgument="&lt;wnd app='tz0console.exe' cls='TFclient' title='Trauma Zer0 Console by Trauma Zer0 [05300079-10.190.35.146\Not l*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
+                                </uix:NGetText.Target>
+                              </uix:NGetText>
+                              <If Condition="[servicoZabbix.Contains(&quot;Zabbix Agent&#x9;Stopped&quot;)]" sap:VirtualizedContainerService.HintSize="510,888" sap2010:WorkflowViewState.IdRef="If_4">
+                                <If.Then>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="476,353" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Serviço Zabbix Agent está parado&quot;]" />
+                                    <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_8">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:Boolean">[out_ZabbixRodando]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="476,353" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Serviço Zabbix Agent não existe no terminal&quot;]" />
+                                    <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_4">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:Boolean">[out_ZabbixRodando]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Else>
+                              </If>
                             </Sequence>
                           </If.Else>
                         </If>
@@ -417,6 +504,6 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1172,141" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Serviço Agent Zabbix verificado&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1324,141" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Serviço Agent Zabbix verificado&quot;]" />
   </Sequence>
 </Activity>

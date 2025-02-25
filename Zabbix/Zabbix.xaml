@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>934,1589</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>960,1469</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Zabbix_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="70">
@@ -99,9 +99,11 @@
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Zabbix" sap:VirtualizedContainerService.HintSize="540,1524" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Zabbix" sap:VirtualizedContainerService.HintSize="546,1404" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="userName" />
       <Variable x:TypeArguments="ss:SecureString" Name="password" />
@@ -111,21 +113,21 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="478,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Iniciando busca ip Zabbix&quot;]" />
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Pesquisar" sap:VirtualizedContainerService.HintSize="478,531" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InUiElement="[io_Zabbix]" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="eb0b01f4-a83d-4b19-9985-c328870b7d9e" Version="V2">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Iniciando busca ip Zabbix&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Pesquisar" sap:VirtualizedContainerService.HintSize="484,531" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InUiElement="[io_Zabbix]" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="eb0b01f4-a83d-4b19-9985-c328870b7d9e" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,394" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,394" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="338,82" sap2010:WorkflowViewState.IdRef="NGoToUrl_2" Url="[in_Config(&quot;URLBuscaZabbix&quot;).ToString.Replace(&quot;[numeroSep]&quot;, in_NumeroSep)]" Version="V3" />
-            <uix:NGetText ContinueOnError="True" DisplayName="Get Text 'IP'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="eb0b01f4-a83d-4b19-9985-c328870b7d9e" TextString="[out_IpTerminal]" Version="V3">
+            <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="388,82" sap2010:WorkflowViewState.IdRef="NGoToUrl_2" Url="[in_Config(&quot;URLBuscaZabbix&quot;).ToString.Replace(&quot;[numeroSep]&quot;, in_NumeroSep)]" Version="V3" />
+            <uix:NGetText ContinueOnError="True" DisplayName="Get Text 'IP'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="eb0b01f4-a83d-4b19-9985-c328870b7d9e" TextString="[out_IpTerminal]" Version="V3">
               <uix:NGetText.Target>
                 <uix:TargetAnchorable BrowserURL="https://monitoramento.saqueepague.com.br/zabbix.php?action=search&amp;search=05101127" DesignTimeRectangle="612, 200, 95, 49" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'10.211.139.18'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' tableRow='2' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' tag='TD' class='' /&gt;" Guid="93077c46-6f70-4fc1-95ed-754d37e325b8" InformativeScreenshot="7e3bd88169f6751879f4deb78c667cc4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Pesquisar' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -143,15 +145,15 @@
         <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFOSURBVDhPlZNBTsJAFIYfGzYkQIArsOQGHIBbcADOwIo9t2DBCbgCUWPU2lbUatKJoGiCQWOMtH2+f0yTNs60OsnHNDP/+2Y6dMgnOlkRbaRXwC0hzaHGIzom+Xl+IOJbUKnwXaPBQbPJAfosGKvXOZAMsqgR4RY7UBi4SCUleCJDNhBEEOYEfrvNURjGfDgkJp4mE7vg8ockUipmS4PAqVbZKRDAnmCFM8GR1d4WC138sVyy22rFmEPOKgBYASu9zma6+Espvu71+DyTKRQgiO2ixfs93w8GekfZjFWAoBoOdTHaejT6VQyMAgSDfp/j3U4Xv0yn+sTxSqUCBFfdLn96ni7G4UF4KuCV8Fx4Bph8HI8TXW34BsD7fB65tZr5b8wJLA0Cr9Mxf0iwov8LuR2klwkDN4LcskKQA2tBBFu6kispExvY/gNqfKKjb8zWNnAyg480AAAAAElFTkSuQmCC" InformativeScreenshot="c5d618b9bc501cd5b469d24034d770c8.jpg" Selector="&lt;html app='chrome.exe' title='Pesquisar' /&gt;" Title="Pesquisar" Url="https://monitoramento.saqueepague.com.br/zabbix.php?action=search&amp;search=05101127" />
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
-    <If Condition="[string.IsNullOrWhiteSpace(out_IpTerminal)]" DisplayName="º       If" sap:VirtualizedContainerService.HintSize="478,480" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[string.IsNullOrWhiteSpace(out_IpTerminal)]" DisplayName="º       If" sap:VirtualizedContainerService.HintSize="484,360" sap2010:WorkflowViewState.IdRef="If_2">
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="400,201" sap2010:WorkflowViewState.IdRef="Sequence_8">
+        <Sequence sap:VirtualizedContainerService.HintSize="376,178" sap2010:WorkflowViewState.IdRef="Sequence_8">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Throw Exception="[new BusinessRuleException(&quot;Terminal não encontrado no Zabbix&quot;)]" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="Throw_1" />
+          <Throw Exception="[new Exception(&quot;Terminal não encontrado no Zabbix&quot;)]" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="Throw_1" />
         </Sequence>
       </If.Then>
       <If.Else>
@@ -164,6 +166,6 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="478,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Fim da busca do IP no Zabbix, ip encontrado: &quot; + out_IpTerminal]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Fim da busca do IP no Zabbix, ip encontrado: &quot; + out_IpTerminal]" />
   </Sequence>
 </Activity>

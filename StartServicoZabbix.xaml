@@ -3,7 +3,7 @@
     <x:Property Name="io_Trauma0" Type="InOutArgument(ui:UiElement)" />
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>960,2157</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1148,4164</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -106,34 +106,34 @@
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="592,2092" sap2010:WorkflowViewState.IdRef="Sequence_8">
+  <Sequence sap:VirtualizedContainerService.HintSize="1158,4099" sap2010:WorkflowViewState.IdRef="Sequence_8">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Iniciando processo de Start no Serviço do Zabbix via DOS&quot;]" />
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="530,1619" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[io_Trauma0]" OutUiElement="[io_Trauma0]" ScopeGuid="f29a067c-846e-4b0f-b84a-4fa56529d64b" Version="V2">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1096,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Iniciando processo de Start no Serviço do Zabbix via DOS&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="1096,3626" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[io_Trauma0]" OutUiElement="[io_Trauma0]" ScopeGuid="f29a067c-846e-4b0f-b84a-4fa56529d64b" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,1442" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1062,3489" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="434,90" sap2010:WorkflowViewState.IdRef="Delay_3" />
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Explorer'" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f29a067c-846e-4b0f-b84a-4fa56529d64b" Version="V3">
+            <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="1000,90" sap2010:WorkflowViewState.IdRef="Delay_3" />
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Explorer'" sap:VirtualizedContainerService.HintSize="1000,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f29a067c-846e-4b0f-b84a-4fa56529d64b" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable CVScreenId="a3c0ef07-1a65-43f5-8605-648970942002" CvTextArea="71, 187, 42, 14" CvTextArgument="Explorer" CvType="Text" DesignTimeRectangle="71, 186, 44, 16" DesignTimeScaleFactor="1" FriendlyName="'Explorer'" FullSelectorArgument="&lt;wnd cls='TcxCustomInnerTreeView' /&gt;&lt;ctrl name='Explorer' role='outline item' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TcxCustomInnerTreeView' /&gt;&lt;ctrl name='Explorer' role='outline item' automationid='' check:text='Explorer' /&gt;" Guid="2e7597ff-3b17-4e38-975c-942895afef0b" InformativeScreenshot="5e1ff144858f991a67bb292a2f5581e0.png" ScopeSelectorArgument="&lt;wnd app='tz0console.exe' cls='TFclient' title='Trauma Zer0 Console by Trauma Zer0 [05500160-10.211.169.82\Not l*' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="434,90" sap2010:WorkflowViewState.IdRef="Delay_4" />
-            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="434,179" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(right)][u(hk)]" Version="V3" />
-            <uix:NCheckState DisplayName="Check App State 'DOS redirect'" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="f29a067c-846e-4b0f-b84a-4fa56529d64b" Version="V3">
+            <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="1000,90" sap2010:WorkflowViewState.IdRef="Delay_4" />
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="1000,179" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(right)][u(hk)]" Version="V3" />
+            <uix:NCheckState DisplayName="Check App State 'DOS redirect'" sap:VirtualizedContainerService.HintSize="1000,748" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="f29a067c-846e-4b0f-b84a-4fa56529d64b" Version="V3">
               <uix:NCheckState.IfExists>
                 <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
@@ -163,12 +163,12 @@
               </uix:NCheckState.Target>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NCheckState>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,375" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1000,385" sap2010:WorkflowViewState.IdRef="TryCatch_1">
               <TryCatch.Try>
                 <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'DOS redirect'" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f29a067c-846e-4b0f-b84a-4fa56529d64b" Version="V3">
                   <uix:NClick.Target>
@@ -177,10 +177,10 @@
                 </uix:NClick>
               </TryCatch.Try>
               <TryCatch.Catches>
-                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,212" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -193,7 +193,7 @@
                 </Catch>
               </TryCatch.Catches>
             </TryCatch>
-            <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="Delay_5">
+            <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="1000,52" sap2010:WorkflowViewState.IdRef="Delay_5">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -201,16 +201,16 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </Delay>
-            <uix:NCheckState DisplayName="Check App State 'DOS redirect commands'" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="f29a067c-846e-4b0f-b84a-4fa56529d64b" Version="V3">
+            <uix:NCheckState DisplayName="Check App State 'DOS redirect commands'" sap:VirtualizedContainerService.HintSize="1000,1393" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="f29a067c-846e-4b0f-b84a-4fa56529d64b" Version="V3">
               <uix:NCheckState.IfExists>
-                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,843" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="496,1136" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Aplicando comando via DOS&quot;]" />
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'DOS redirect commands'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="f29a067c-846e-4b0f-b84a-4fa56529d64b" Text="[in_Config(&quot;ComandoZabbix&quot;).ToString]" Version="V3">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Aplicando comando via DOS&quot;]" />
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'DOS redirect commands'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="f29a067c-846e-4b0f-b84a-4fa56529d64b" Text="[in_Config(&quot;ComandoZabbix&quot;).ToString]" Version="V3">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable DesignTimeRectangle="181, 527, 1210, 49" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'TcxCustomInnerMemo'" FullSelectorArgument="&lt;wnd cls='TcxTabSheet' title='Explorer' /&gt;&lt;wnd cls='TcxTabSheet' title='DOS redirect' /&gt;&lt;wnd cls='TcxCustomInnerMemo' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TcxTabSheet' title='Explorer' /&gt;&lt;wnd cls='TcxTabSheet' title='DOS redirect' /&gt;&lt;wnd cls='TcxCustomInnerMemo' /&gt;" Guid="0155b494-97b3-41d9-81a7-0b2c4b801c79" InformativeScreenshot="4c4766b277d3bcf97a23ff0d188d46b6.png" ScopeSelectorArgument="&lt;wnd app='tz0console.exe' cls='TFclient' title='Trauma Zer0 Console by Trauma Zer0 [05500160-10.211.169.82\Not l*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
@@ -221,18 +221,36 @@
                       </uix:TargetAnchorable>
                     </uix:NTypeInto.Target>
                   </uix:NTypeInto>
-                  <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Delay_6" />
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Run'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f29a067c-846e-4b0f-b84a-4fa56529d64b" Version="V3">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable CVScreenId="7ab5e121-968c-45d5-b1e3-99479ec2b18d" CvElementArea="15, 60, 36, 35" CvTextArea="22, 98, 21, 11" CvTextArgument="Run" CvType="Button" DesignTimeRectangle="13, 58, 42, 66" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Run'" FullSelectorArgument="&lt;wnd aaname='Custom 4' cls='TdxRibbon' /&gt;&lt;wnd aaname='DOS redirect' cls='TdxRibbonGroupsDockControl' /&gt;&lt;ctrl name='DOS redirect' role='tool bar' /&gt;&lt;ctrl name='Run' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Custom 4' cls='TdxRibbon' /&gt;&lt;wnd aaname='DOS redirect' cls='TdxRibbonGroupsDockControl' /&gt;&lt;ctrl name='DOS redirect' role='tool bar' /&gt;&lt;ctrl name='Run' role='push button' automationid='' check:text='Run' /&gt;" Guid="c5bd7fe3-7348-4d44-817e-ee039bebe653" InformativeScreenshot="f225af3b021f50379f39c48d69fedcb9.png" ScopeSelectorArgument="&lt;wnd app='tz0console.exe' cls='TFclient' title='Trauma Zer0 Console by Trauma Zer0 [05500160-10.211.169.82\Not l*' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
-                        <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                            <uix:Target DesignTimeRectangle="63, 58, 42, 66" FriendlyName="'Clear'" FullSelectorArgument="&lt;wnd aaname='Custom 4' cls='TdxRibbon' /&gt;&lt;wnd aaname='DOS redirect' cls='TdxRibbonGroupsDockControl' /&gt;&lt;ctrl name='DOS redirect' role='tool bar' /&gt;&lt;ctrl name='Clear' role='menu item' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Custom 4' cls='TdxRibbon' /&gt;&lt;wnd aaname='DOS redirect' cls='TdxRibbonGroupsDockControl' /&gt;&lt;ctrl name='DOS redirect' role='tool bar' /&gt;&lt;ctrl name='Clear' role='menu item' automationid='' check:text='Clear' /&gt;" SearchSteps="Selector, FuzzySelector" />
-                          </scg:List>
-                        </uix:TargetAnchorable.Anchors>
-                      </uix:TargetAnchorable>
-                    </uix:NClick.Target>
-                  </uix:NClick>
+                  <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="434,90" sap2010:WorkflowViewState.IdRef="Delay_6" />
+                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,450" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                    <TryCatch.Try>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Run'" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f29a067c-846e-4b0f-b84a-4fa56529d64b" Version="V3">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable CVScreenId="0c3ab5b3-95d7-4736-a7b9-57f1d8dcec3b" CvElementArea="15, 60, 36, 35" CvTextArea="22, 98, 21, 11" CvTextArgument="Run" CvType="Button" DesignTimeRectangle="13, 58, 42, 66" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Run'" FullSelectorArgument="&lt;wnd aaname='Custom 4' cls='TdxRibbon' /&gt;&lt;wnd aaname='DOS redirect' cls='TdxRibbonGroupsDockControl' /&gt;&lt;ctrl name='DOS redirect' role='tool bar' /&gt;&lt;ctrl name='Run' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Custom 4' cls='TdxRibbon' /&gt;&lt;wnd aaname='DOS redirect' cls='TdxRibbonGroupsDockControl' /&gt;&lt;ctrl name='DOS redirect' role='tool bar' /&gt;&lt;ctrl name='Run' role='push button' automationid='' check:text='Run' /&gt;" Guid="f6b9a3ac-4321-4d5a-b463-de9993c583e4" InformativeScreenshot="6cefe65ec3bdb2b25ded365361d7ba15.png" ScopeSelectorArgument="&lt;wnd app='tz0console.exe' cls='TFclient' title='Trauma Zer0 Console by Trauma Zer0 [08900007-10.211.178.178\Not *' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                        </uix:NClick.Target>
+                      </uix:NClick>
+                    </TryCatch.Try>
+                    <TryCatch.Catches>
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,287" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ActivityAction x:TypeArguments="s:Exception">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                          </ActivityAction.Argument>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'TcxCustomInnerMemo'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,218" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="f29a067c-846e-4b0f-b84a-4fa56529d64b" Text="%[k(Enter)]" Version="V3">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable DesignTimeRectangle="181, 527, 1210, 49" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'TcxCustomInnerMemo'" FullSelectorArgument="&lt;wnd cls='TcxTabSheet' title='Explorer' /&gt;&lt;wnd cls='TcxTabSheet' title='DOS redirect' /&gt;&lt;wnd cls='TcxCustomInnerMemo' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TcxTabSheet' title='Explorer' /&gt;&lt;wnd cls='TcxTabSheet' title='DOS redirect' /&gt;&lt;wnd cls='TcxCustomInnerMemo' /&gt;" Guid="512309c7-ed26-4160-9992-cc0a5ad1b457" InformativeScreenshot="f9437ad3cf598ea8b099eed9b55c09d8.png" ScopeSelectorArgument="&lt;wnd app='tz0console.exe' cls='TFclient' title='Trauma Zer0 Console by Trauma Zer0 [08900007-10.211.178.178\Not *' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
+                            </uix:NTypeInto.Target>
+                          </uix:NTypeInto>
+                        </ActivityAction>
+                      </Catch>
+                    </TryCatch.Catches>
+                  </TryCatch>
                 </Sequence>
               </uix:NCheckState.IfExists>
               <uix:NCheckState.IfNotExists>
@@ -249,7 +267,7 @@
               </uix:NCheckState.Target>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -267,6 +285,6 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,141" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Processo de Start no Serviço do Zabbix via DOS finalizado&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1096,141" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Processo de Start no Serviço do Zabbix via DOS finalizado&quot;]" />
   </Sequence>
 </Activity>
