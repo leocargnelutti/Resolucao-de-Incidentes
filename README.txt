@@ -2,6 +2,4 @@ O processo de Alertas de Teclado é um procedimento de extrema importância na S
 
 O robô acessa a fila de Casos de Manutenção de terminal com o sintomas de Teclado indisponível ou Teclado Sem RKL no Salesforce, coleta as informações necessárias, verifica se existe problema no RKL ou Hardware Error e conforme o problema encontrado, tenta resolve-lo e mandar para a fila da equipe de Canais.
 
-"Dashboard.png" - Demonstração de um dashboard criado para acompanhar a execução dos robôs, exibindo a porcentagem de sucesso e falha, além do retorno sobre o investimento. O cálculo considera as horas executadas pelo robô em comparação com o custo-hora dos colaboradores anteriormente responsáveis pela tarefa, multiplicado por 2 (considerando que o robô realiza as ações em metade do tempo de um humano).
-
 "Fluxo.jpg" - Bizagi do processo e suas etapas
